@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_abouts",
+  "info": {
+    "displayName": "About"
+  },
+  "options": {},
+  "attributes": {
+    "image1": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "image2": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "cards": {
+      "displayName": "Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "about.card",
+      "required": true,
+      "min": 3,
+      "max": 3
+    }
+  }
+}

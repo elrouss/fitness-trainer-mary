@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_activities_tabs",
+  "info": {
+    "displayName": "Tab",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "activities.card"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

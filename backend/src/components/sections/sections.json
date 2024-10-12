@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_sections",
+  "info": {
+    "displayName": "sections",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "activities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.activities",
+      "required": true
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.about",
+      "required": true
+    }
+  }
+}

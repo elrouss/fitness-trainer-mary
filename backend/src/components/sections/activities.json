@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_activities",
+  "info": {
+    "displayName": "Activities",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "activities.tab",
+      "required": true,
+      "min": 2
+    }
+  }
+}
