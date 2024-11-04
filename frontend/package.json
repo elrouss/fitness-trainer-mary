@@ -10,7 +10,8 @@
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
     "stylelint": "npx stylelint \"src/**/*.{css,scss}\"",
-    "stylelint:fix": "npx stylelint \"src/**/*.{css,scss}\" --fix"
+    "stylelint:fix": "npx stylelint \"src/**/*.{css,scss}\" --fix",
+    "prettier": "npx prettier --write \"**/*.pug\" --plugin=\"@prettier/plugin-pug\""
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.14.0",
+    "@prettier/plugin-pug": "^3.2.0",
     "@stylistic/eslint-plugin": "^2.10.1",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
@@ -32,6 +34,7 @@
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.0.9",
+    "prettier": "3.3.3",
     "pug": "^3.0.3",
     "pug-html-loader": "^1.1.5",
     "raw-loader": "^4.0.2",
