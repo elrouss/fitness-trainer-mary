@@ -1,4 +1,36 @@
-.background {
-    position: absolute;
-    font: optional;
+:root {
+    // Colors
+    --color-primary-main-100: #FF7700;
+    --color-primary-bg-100: #181818;
+    --color-primary-bg-200: #EBEBEB;
+    --color-primary-accent-100: #848484;
+
+    --color-secondary-bg-100: #282828;
+    --color-secondary-bg-200: #2C2B2B;
+    --color-secondary-bg-300: #838383;
+    --color-secondary-bg-400: #152D3F;
+    --color-secondary-bg-500: #9FAEBC;
+    --color-secondary-bg-600: #FBFBFB;
+
+    --color-status-success: #1F9C46;
+    --color-status-danger: #D83333;
+    --color-status-warning: #F7AA22;
+    --color-status-info: #1D86EF;
+
+    // Spacing
+    --spacing-100: 128px;
+    --spacing-200: 80px;
+    --spacing-300: 48px;
+    --spacing-400: 32px;
+    --spacing-500: 24px;
+    --spacing-600: 16px;
+    --spacing-700: 8px;
+    --spacing-800: 4px;
+
+    // Radius
+    --radius-100: 50%;
+    --radius-200: 40px;
+    --radius-300: 20px;
+    --radius-400: 16px;
+    --radius-500: 10px;
 }
