@@ -1,0 +1,84 @@
+@use "styles/mixins" as *;
+
+.button {
+    $this: &;
+
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 32px 12px;
+    border-radius: var(--radius-500);
+    user-select: none;
+    transition:
+        border-color var(--transition-duration-basic)
+            var(--transition-easing-func),
+        color var(--transition-duration-basic) var(--transition-easing-func),
+        background-color var(--transition-duration-basic)
+            var(--transition-easing-func);
+
+    &_theme {
+        &_default {
+            @include hover {
+                background-color: var(--color-primary-main-200);
+            }
+
+            @include focus-visible {
+                outline: 1px solid var(--color-primary-main-100);
+                outline-offset: 1px;
+            }
+
+            @include disabled {
+                background-color: var(--color-primary-main-300);
+            }
+
+            background-color: var(--color-primary-main-100);
+            color: var(--color-white);
+        }
+
+        &_dark {
+            @include hover {
+                border-color: var(--color-primary-main-100);
+                color: var(--color-primary-main-100);
+            }
+
+            @include disabled {
+                color: var(--color-secondary-bg-300);
+            }
+
+            border: 1px solid transparent;
+            background-color: var(--color-secondary-bg-200);
+            color: var(--color-secondary-bg-350);
+        }
+
+        &_light {
+            @include hover {
+                color: var(--color-primary-main-200);
+            }
+
+            @include focus-visible {
+                outline: 1px solid var(--color-primary-bg-200);
+                outline-offset: -2px;
+            }
+
+            @include disabled {
+                color: var(--color-secondary-bg-300);
+            }
+
+            background-color: var(--color-secondary-bg-600);
+            color: var(--color-secondary-bg-100);
+        }
+    }
+
+    &__spinner {
+        &#{&} {
+            display: none;
+
+            &_visible {
+                display: inline-flex;
+
+                & + #{$this}__text {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+mixin button(props = {})
+    button.button&attributes(attributes)(
+        class=`button_theme_${props.theme || 'default'}`,
+        type=props.type || "button"
+    )
+        +spinner('spinner').button__spinner
+        span.h4.button__text= props.text

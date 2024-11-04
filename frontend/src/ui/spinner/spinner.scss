@@ -1,0 +1,23 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        animation: rotation 0.7s linear infinite;
+    }
+}
