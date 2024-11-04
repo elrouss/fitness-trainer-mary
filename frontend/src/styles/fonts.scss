@@ -1,0 +1,22 @@
+$fonts:
+    "Bebas Neue" "BebasNeue-Bold" 700,
+    "Inter" "Inter-SemiBold" 600,
+    "Inter" "Inter-Medium" 500,
+    "Inter" "Inter-Regular" 400;
+
+@mixin font($fontFamily, $fileName, $fontWeight, $fontStyle: normal) {
+    @font-face {
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        font-style: $fontStyle;
+        font-display: swap;
+        src:
+            url("assets/fonts/#{$fileName}.woff2") format("woff2"),
+            url("assets/fonts/#{$fileName}.woff") format("woff"),
+            url("assets/fonts/#{$fileName}.ttf") format("truetype");
+    }
+}
+
+@each $fontFamily, $fileName, $fontWeight in $fonts {
+    @include font($fontFamily, $fileName, $fontWeight);
+}

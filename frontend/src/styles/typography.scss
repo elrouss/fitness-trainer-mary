@@ -1,0 +1,38 @@
+$typography:
+    "h1" "Bebas Neue" 700 160px 144px,
+    "h2" "Bebas Neue" 700 64px 64px,
+    "h3" "Bebas Neue" 700 36px 36px,
+    "h4" "Bebas Neue" 700 20px 20px,
+    "h5" "Bebas Neue" 700 18px 18px,
+    "h6" "Bebas Neue" 700 16px 36px,
+    "p1" "Inter" 600 24px 29.05px,
+    "p2" "Inter" 600 16px 19.36px,
+    "p3" "Inter" 500 16px 19.36px,
+    "p4" "Inter" 400 12px 14.52px;
+
+@mixin typography(
+    $className,
+    $fontFamily,
+    $fontWeight,
+    $fontSize,
+    $lineHeight
+) {
+    .#{$className} {
+        font-family: $fontFamily, Arial, Helvetica, sans-serif;
+        font-weight: $fontWeight;
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+}
+
+@each $className, $fontFamily, $fontWeight, $fontSize,
+    $lineHeight in $typography
+{
+    @include typography(
+        $className,
+        $fontFamily,
+        $fontWeight,
+        $fontSize,
+        $lineHeight
+    );
+}

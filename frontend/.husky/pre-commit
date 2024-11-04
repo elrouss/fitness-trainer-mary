@@ -1,9 +1,9 @@
 cd frontend
 
 npm run eslint:fix
-# npm run stylelint:fix
+npm run stylelint:fix
 npm run eslint
-# npm run stylelint
+npm run stylelint
 npm run prettier
 npm run build:dev
 

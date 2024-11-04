@@ -1,8 +1,18 @@
 {
-    "extends": "stylelint-config-standard-scss",
+    "extends": [
+		"stylelint-config-standard-scss"
+	],
     "plugins": [
         "stylelint-order"
     ],
+	"ignoreFiles": [
+		"src/styles/functions.scss",
+		"src/styles/mixins.scss",
+		"src/styles/placeholders.scss",
+		"dist/**/*",
+		"config/**/*",
+		"node_modules/**/*"
+	],
     "rules": {
         "selector-max-id": 0,
 
@@ -151,13 +161,14 @@
 				"margin-left",
 
 				"font",
+				"font-family",
 				"font-weight",
 				"font-style",
 				"font-variant",
 				"font-size-adjust",
 				"font-stretch",
 				"font-size",
-				"font-family",
+				"font-display",
 				"src",
 				"line-height",
 				"letter-spacing",
