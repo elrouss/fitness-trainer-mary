@@ -1,0 +1,83 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.checkbox {
+    $this: &;
+
+    @include hover {
+        #{$this}__box {
+            border-color: var(--color-primary-accent-100);
+        }
+    }
+
+    position: relative;
+    display: inline-flex;
+    column-gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &:has(input:checked) {
+        @include hover {
+            #{$this}__boxWrapper {
+                & > #{$this}__box {
+                    border-color: var(--color-secondary-bg-500);
+                }
+            }
+        }
+        #{$this}__boxWrapper {
+            & > #{$this}__box {
+                border-color: var(--color-primary-main-100);
+                background-color: var(--color-primary-main-100);
+            }
+
+            & > #{$this}__icon {
+                @extend %position-center;
+
+                display: block;
+            }
+        }
+    }
+
+    &_error {
+        #{$this}__box {
+            border-color: var(--color-status-danger);
+            background-color: var(--color-status-danger-100);
+        }
+    }
+
+    &__input {
+        @extend %visually-hidden;
+    }
+
+    &__boxWrapper {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__box {
+        @include hover {
+            border-color: var(--color-primary-accent-100);
+        }
+
+        display: inline-block;
+        width: inherit;
+        height: inherit;
+        border: 1px solid var(--color-secondary-bg-500);
+        border-radius: 4px;
+        background-color: var(--color-secondary-bg-600);
+        transition: border-color var(--transition-duration-basic)
+            var(--transition-easing-func);
+    }
+
+    &__icon {
+        display: none;
+        width: 14px;
+        height: 10px;
+    }
+
+    &__label {
+        color: var(--color-primary-accent-100);
+    }
+}

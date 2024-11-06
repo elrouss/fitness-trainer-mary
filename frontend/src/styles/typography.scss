@@ -8,7 +8,8 @@ $typography:
     "p1" "Inter" 600 24px 29.05px,
     "p2" "Inter" 600 16px 19.36px,
     "p3" "Inter" 500 16px 19.36px,
-    "p4" "Inter" 400 12px 14.52px;
+    "p4" "Inter" 400 14px 20px
+    "p5" "Inter" 400 12px 14.52px;
 
 @mixin typography(
     $className,
