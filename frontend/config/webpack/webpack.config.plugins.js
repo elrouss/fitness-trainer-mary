@@ -13,5 +13,11 @@ module.exports = [
   }),
   new SVGSpritemapPlugin([
     'src/assets/icons/*.svg',
-  ])
+  ], {
+    sprite: {
+      generate: {
+        title: false
+      }
+    }
+  })
 ];

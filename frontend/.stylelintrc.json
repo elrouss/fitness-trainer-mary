@@ -8,7 +8,6 @@
 	"ignoreFiles": [
 		"src/styles/functions.scss",
 		"src/styles/mixins.scss",
-		"src/styles/placeholders.scss",
 		"dist/**/*",
 		"config/**/*",
 		"node_modules/**/*"
@@ -243,7 +242,6 @@
 				"column-width",
 				"column-count",
 				"column-fill",
-				"column-gap",
 				"column-rule",
 				"column-rule-width",
 				"column-rule-style",

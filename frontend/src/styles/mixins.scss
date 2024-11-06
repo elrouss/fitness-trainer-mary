@@ -1,0 +1,43 @@
+@use "sass:math";
+
+@mixin media($property, $deviceSize) {
+    @media screen and (#{$property}: #{$deviceSize}px) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin focus-visible {
+    &:focus-visible {
+        @content;
+    }
+}
+
+@mixin focus-within {
+    &:focus-within {
+        @content;
+    }
+}
+
+@mixin disabled {
+    &:disabled {
+        @content;
+
+        pointer-events: none;
+    }
+}
+
+@mixin rem($property, $fontSize, $rootFontSize: 16px) {
+    #{$property}: math.div($fontSize, $rootFontSize) * 1rem;
+}
+
+@mixin line-height($lineHeight, $fontSize) {
+    line-height: math.div($lineHeight, $fontSize) * 100%;
+}

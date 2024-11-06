@@ -1,0 +1,6 @@
+mixin checkbox2(props = {})
+    label.p3.checkbox2&attributes(attributes)
+        input.checkbox2__input(type="checkbox")
+        span.checkbox2__iconWrapper
+            +Icon(props.icon).checkbox2__icon
+        span.checkbox2__label!= props.label
