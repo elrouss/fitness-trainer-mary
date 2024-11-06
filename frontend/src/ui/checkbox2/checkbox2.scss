@@ -1,0 +1,63 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.checkbox2 {
+    @include hover {
+        color: var(--color-secondary-bg-100);
+    }
+
+    @include focus-within {
+        color: var(--color-secondary-bg-100);
+    }
+
+    position: relative;
+    display: inline-flex;
+    column-gap: var(--spacing-700);
+    align-items: center;
+    padding: 9px 23px;
+    border: 1px solid currentcolor;
+    border-radius: var(--radius-500);
+    background-color: var(--color-white);
+    color: var(--color-secondary-bg-300);
+    cursor: pointer;
+    user-select: none;
+    transition:
+        border-color var(--transition-duration-basic)
+            var(--transition-easing-func),
+        color var(--transition-duration-basic) var(--transition-easing-func);
+
+    &:has(input:checked) {
+        @include hover {
+            border-color: var(--color-secondary-bg-500);
+        }
+
+        @include focus-within {
+            border-color: var(--color-secondary-bg-500);
+        }
+
+        border-color: var(--color-primary-bg-100);
+        background-color: var(--color-primary-bg-100);
+        color: var(--color-primary-bg-200);
+    }
+
+    &__input {
+        @extend %visually-hidden;
+
+        transition: background-color var(--transition-duration-basic)
+            var(--transition-easing-func);
+    }
+
+    &__iconWrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 21px;
+        fill: currentcolor;
+    }
+}
