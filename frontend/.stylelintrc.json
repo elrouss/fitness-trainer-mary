@@ -7,7 +7,6 @@
     ],
 	"ignoreFiles": [
 		"src/styles/functions.scss",
-		"src/styles/mixins.scss",
 		"dist/**/*",
 		"config/**/*",
 		"node_modules/**/*"
