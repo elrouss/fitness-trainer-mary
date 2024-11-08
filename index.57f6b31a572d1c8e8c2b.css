@@ -254,7 +254,7 @@ body {
   padding: 24px 0;
   padding: var(--spacing-500) 0;
   margin: 0 auto;
-  background: center/46.6% no-repeat url(assets/images/hero.664a2fe47f6541b076aa..png);
+  background: center/46.6% no-repeat url(assets/images/hero.8b2dc17c38959f4e7b0e..png);
   background-position: right 22% bottom 0;
   color: #838383;
   color: var(--color-secondary-bg-300);
@@ -821,4 +821,4 @@ body {
   animation: rotation 0.7s linear infinite;
 }
 
-/*# sourceMappingURL=index.75a16c6d87421c176f07.css.map*/
+/*# sourceMappingURL=index.57f6b31a572d1c8e8c2b.css.map*/
