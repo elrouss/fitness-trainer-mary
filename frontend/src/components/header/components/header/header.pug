@@ -1,0 +1,51 @@
+mixin header(props = {})
+    //- TODO: Сделать решение под импорт JSON
+    -
+        const links = [
+            {
+                label: 'Обо мне',
+                href: '#'
+            },
+            {
+                label: 'Тренировки',
+                href: '#'
+            },
+            {
+                label: 'Результаты',
+                href: '#'
+            },
+            {
+                label: 'Мероприятия',
+                href: '#'
+            }
+        ]
+
+        const messengers = [
+            {
+                class: 'header__whatsapp',
+                icon: 'whatsapp',
+                href: 'https://wa.me/79052327888',
+                ariaLabel: 'Перейти в мессенджер WhatsApp'
+            },
+            {
+                class: 'header__telegram',
+                icon: 'telegram',
+                href: 'https://telegram.me/Luonidovna',
+                ariaLabel: 'Перейти в мессенджер Telegram'
+            }
+        ]
+
+    header.header&attributes(attributes)
+        .header__wrapper
+            a.header__logo-link(href="#", aria-label="Прокрутить страницу к началу")
+                span.header__backdrop.header__backdrop_logo
+                    +logo
+
+            .header__backdrop.header__backdrop_nav-bar
+                +nav-bar({ links })
+
+            .header__backdrop.header__backdrop_buttons
+                each messenger in messengers
+                    +link-button(messenger)
+
+                +button({ text: 'Начать заниматься' }).header__button

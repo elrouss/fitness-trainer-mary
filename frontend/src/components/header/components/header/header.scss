@@ -1,0 +1,60 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1440px;
+    transform: translateX(-50%);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - var(--spacing-400) * 2);
+        margin: var(--spacing-700) auto;
+    }
+
+    &__backdrop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-750) var(--spacing-550);
+        border-radius: var(--radius-500);
+        background-color: var(--color-secondary-bg-100);
+
+        &_logo {
+            width: 100%;
+        }
+
+        &_nav-bar {
+            width: 55.45%;
+        }
+
+        &_buttons {
+            justify-content: space-between;
+            width: 26.6%;
+        }
+    }
+
+    &__logo-link {
+        width: 15.7%;
+    }
+
+    &__button {
+        width: 66.26%;
+    }
+
+    &__whatsapp {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__telegram {
+        svg {
+            width: 20px;
+            height: 17px;
+        }
+    }
+}

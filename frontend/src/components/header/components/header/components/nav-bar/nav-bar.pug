@@ -1,0 +1,6 @@
+mixin nav-bar(props = {})
+    nav.nav-bar
+        ul.nav-bar__list
+            each link in props.links
+                li
+                    +nav-bar-link(link)

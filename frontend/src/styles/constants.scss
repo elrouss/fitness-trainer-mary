@@ -12,6 +12,7 @@
     --color-secondary-bg-200: #2C2B2B;
     --color-secondary-bg-300: #838383;
     --color-secondary-bg-350: #ABAAAA;
+    --color-secondary-bg-375: #B2B2B2;
     --color-secondary-bg-400: #152D3F;
     --color-secondary-bg-500: #9FAEBC;
     --color-secondary-bg-600: #FBFBFB;
@@ -21,14 +22,19 @@
     --color-status-warning: #F7AA22;
     --color-status-info: #1D86EF;
 
+    // Containers
+    --container-main: 1376px;
+
     // Spacing
     --spacing-100: 128px;
     --spacing-200: 80px;
     --spacing-300: 48px;
     --spacing-400: 32px;
     --spacing-500: 24px;
+    --spacing-550: 20px;
     --spacing-600: 16px;
     --spacing-700: 8px;
+    --spacing-750: 6px;
     --spacing-800: 4px;
 
     // Radius
