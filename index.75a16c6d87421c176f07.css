@@ -164,17 +164,24 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 19.36px;
 }
 
 .p6 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.p7 {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
 }
 
-.p7 {
+.p8 {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -227,6 +234,54 @@ body {
   font-weight: 500;
   background-color: #181818;
   background-color: var(--color-primary-bg-100);
+}
+
+.main {
+  margin-top: 70px;
+}
+
+.section-hero {
+  background-color: #181818;
+  background-color: var(--color-primary-bg-100);
+}
+.section-hero__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1376px;
+  max-width: var(--container-main);
+  height: calc(100vh - 70px);
+  padding: 24px 0;
+  padding: var(--spacing-500) 0;
+  margin: 0 auto;
+  background: center/46.6% no-repeat url(assets/images/hero.664a2fe47f6541b076aa..png);
+  background-position: right 22% bottom 0;
+  color: #838383;
+  color: var(--color-secondary-bg-300);
+}
+.section-hero__title {
+  width: 70.28%;
+  color: #FBFBFB;
+  color: var(--color-secondary-bg-600);
+}
+.section-hero__motto {
+  max-width: 260px;
+  margin-bottom: 20px;
+  margin-bottom: var(--spacing-550);
+  text-transform: uppercase;
+}
+.section-hero__accent-word {
+  position: relative;
+  text-indent: -4px;
+}
+.section-hero__accent-word::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  bottom: -15px;
+  width: 471px;
+  height: 127px;
+  background: center/cover no-repeat url(assets/images/signature-mary.05d382506afea05998f1..png);
 }
 
 .section-faq {
@@ -402,8 +457,11 @@ body {
   background-color: var(--color-primary-bg-100);
 }
 .section__wrapper {
-  padding: 128px 32px;
-  padding: var(--spacing-100) var(--spacing-400);
+  max-width: 1376px;
+  max-width: var(--container-main);
+  padding: 128px 0;
+  padding: var(--spacing-100) 0;
+  margin: 0 auto;
 }
 
 .section-title_theme_light {
@@ -763,4 +821,4 @@ body {
   animation: rotation 0.7s linear infinite;
 }
 
-/*# sourceMappingURL=index.599317975aa5ff5402d0.css.map*/
+/*# sourceMappingURL=index.75a16c6d87421c176f07.css.map*/
