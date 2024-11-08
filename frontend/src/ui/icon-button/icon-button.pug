@@ -1,0 +1,27 @@
+mixin icon-button(props = {})
+    -
+        const isTagButton = props.tag === 'button'
+
+    mixin ico(icon = '')
+        if props.icon
+            span.icon-button__wrapper
+                +icon(icon).icon-button__icon(class=`icon-button__icon_${icon}`)
+
+    if isTagButton
+        button.icon-button&attributes(attributes)(
+            class=`icon-button_theme_${props.theme || 'light'}`,
+            type="button"
+        )
+            +ico(props.icon)
+    else if isTagButtonSpan
+        span.icon-button&attributes(attributes)(
+            class=`icon-button_theme_${props.theme || 'light'}`,
+            role="button",
+            tabindex="0"
+        )
+            +ico(props.icon)
+    else
+        span.icon-button&attributes(attributes)(
+            class=`icon-button_theme_${props.theme || 'light'}`
+        )
+            +ico(props.icon)

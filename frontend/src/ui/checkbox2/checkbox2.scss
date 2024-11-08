@@ -2,6 +2,8 @@
 @use "styles/mixins" as *;
 
 .checkbox2 {
+    @include transition(("border-color", "color"));
+
     @include hover {
         color: var(--color-secondary-bg-100);
     }
@@ -21,10 +23,6 @@
     color: var(--color-secondary-bg-300);
     cursor: pointer;
     user-select: none;
-    transition:
-        border-color var(--transition-duration-basic)
-            var(--transition-easing-func),
-        color var(--transition-duration-basic) var(--transition-easing-func);
 
     &:has(input:checked) {
         @include hover {
@@ -42,9 +40,7 @@
 
     &__input {
         @extend %visually-hidden;
-
-        transition: background-color var(--transition-duration-basic)
-            var(--transition-easing-func);
+        @include transition("background-color");
     }
 
     &__iconWrapper {

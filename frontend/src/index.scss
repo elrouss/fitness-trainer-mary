@@ -7,13 +7,17 @@
 @use 'styles/global';
 
 // PAGES
+@use 'pages/home/components/home/components/section-faq/section-faq' as home-section-faq;
 
 // MODULES
 
 // COMPONENTS
+@use 'components/accordion/index' as accordion;
+@use 'components/section/index' as section;
 
 // UI
 @use 'ui/button/button';
 @use 'ui/checkbox/checkbox';
 @use 'ui/checkbox2/checkbox2';
+@use 'ui/icon-button/icon-button';
 @use 'ui/spinner/spinner';

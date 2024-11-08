@@ -1,0 +1,5 @@
+mixin accordion(props = {})
+    #{props.tag || 'ul'}.accordion&attributes(attributes)
+        each item, index in props.data
+            li.accordion__item
+                +accordion-item({ counter: `${index + 1}.`, title: item.title, panel: item.panel })

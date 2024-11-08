@@ -1,0 +1,25 @@
+mixin section-title(props = {})
+    //- TODO: вынести в миксин базовый тег
+    if props.title.startText && props.title.middleText && props.title.endText
+        #{props.title.tag || 'h2'}.section-title.h2(
+            class!=`section-title_theme_${props.theme}`,
+            class!=`section-title_align_${props.title.align || 'left'}`
+        )
+            span!= props.title.startText
+
+            span.section-title__accent-word!= props.title.middleText
+
+            span!= props.title.endText
+    else if props.title.startText && props.title.endText
+        #{props.title.tag || 'h2'}.section-title.h2(
+            class!=`section-title_theme_${props.theme}`,
+            class!=`section-title_align_${props.title.align || 'left'}`
+        )
+            span!= props.title.startText
+
+            span.section-title__accent-word!= props.title.endText
+    else
+        #{props.title.tag || 'h2'}.section-title.h2(
+            class!=`section-title_theme_${props.theme}`,
+            class!=`section-title_align_${props.title.align || 'left'}`
+        )!= props.title

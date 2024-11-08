@@ -52,6 +52,7 @@ module.exports = {
       helpers: path.resolve(__dirname, 'src/helpers/'),
       modules: path.resolve(__dirname, 'src/modules/'),
       pages: path.resolve(__dirname, 'src/pages/'),
+      services: path.resolve(__dirname, 'src/services/'),
       styles: path.resolve(__dirname, 'src/styles/'),
       types: path.resolve(__dirname, 'src/types/'),
       ui: path.resolve(__dirname, 'src/ui/')

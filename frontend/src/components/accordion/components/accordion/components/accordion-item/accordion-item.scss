@@ -1,0 +1,76 @@
+@use "styles/mixins" as *;
+
+.accordion-item {
+    $this: &;
+    $column-gap: 20px;
+
+    @include transition("border-color");
+
+    @include hover {
+        border-color: var(--color-secondary-bg-500);
+
+        #{$this}__icon-button {
+            background-color: var(--color-primary-bg-100);
+            color: var(--color-primary-bg-200);
+        }
+    }
+
+    border: 2px solid transparent;
+    border-radius: var(--radius-300);
+    background-color: var(--color-secondary-bg-600);
+    cursor: pointer;
+
+    &__button {
+        display: grid;
+        grid-template-areas:
+            "counter title button"
+            "counter panel button";
+        grid-template-rows: max-content;
+        overflow-y: hidden;
+        padding: calc(var(--spacing-500) - 4px) var(--spacing-500);
+        user-select: initial;
+    }
+
+    &__counter {
+        grid-area: counter;
+        margin-right: $column-gap;
+    }
+
+    &__title {
+        grid-area: title;
+        text-align: start;
+    }
+
+    &__panel {
+        @include transition("max-height");
+
+        grid-area: panel;
+        max-height: 44px;
+        margin-top: var(--spacing-500);
+        text-align: start;
+        color: var(--color-secondary-bg-300);
+
+        &_hidden {
+            @include line-clamp;
+        }
+
+        &_animation {
+            max-height: 500px;
+        }
+    }
+
+    &__icon-button {
+        grid-area: button;
+        margin-left: $column-gap;
+
+        .icon-button__wrapper {
+            @include transition("transform");
+        }
+
+        &_animation {
+            .icon-button__wrapper {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

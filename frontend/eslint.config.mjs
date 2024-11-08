@@ -31,7 +31,6 @@ export default [
             '@stylistic/indent-binary-ops': ['error', 2],
             '@stylistic/key-spacing': 'error',
             '@stylistic/keyword-spacing': 'error',
-            '@stylistic/lines-between-class-members': ['error', 'always'],
             '@stylistic/max-statements-per-line': 'error',
             '@stylistic/member-delimiter-style': 'error',
             '@stylistic/new-parens': 'error',
@@ -61,6 +60,7 @@ export default [
                 'error',
                 { blankLine: 'always', prev: '*', next: 'return' },
                 { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+                { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var']},
                 { blankLine: 'always', prev: ['case', 'default'], next: '*' }
             ],
             '@stylistic/quote-props': ['error', 'as-needed'],
@@ -88,7 +88,6 @@ export default [
             'array-callback-return': 'error',
             'arrow-body-style': ['error', 'as-needed'],
             camelcase: 'error',
-            'class-methods-use-this': 'error',
             'consistent-return': 'error',
             curly: 'error',
             'default-case': 'error',

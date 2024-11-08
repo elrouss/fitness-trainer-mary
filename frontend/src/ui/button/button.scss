@@ -3,17 +3,13 @@
 .button {
     $this: &;
 
+    @include transition(("border-color", "color", "background-color"));
+
     display: inline-flex;
     align-items: center;
     padding: 10px 32px 12px;
     border-radius: var(--radius-500);
     user-select: none;
-    transition:
-        border-color var(--transition-duration-basic)
-            var(--transition-easing-func),
-        color var(--transition-duration-basic) var(--transition-easing-func),
-        background-color var(--transition-duration-basic)
-            var(--transition-easing-func);
 
     &_theme {
         &_default {

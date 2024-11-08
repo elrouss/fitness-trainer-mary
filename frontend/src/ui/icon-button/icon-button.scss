@@ -1,0 +1,59 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.icon-button {
+    @include transition(('color', 'background-color'));
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-100);
+
+    &_theme {
+        &_light {
+            @include hover {
+                color: var(--color-primary-bg-100);
+            }
+
+            @include active {
+                color: var(--color-primary-accent-100);
+            }
+
+            background-color: var(--color-secondary-bg-600);
+            color: var(--color-secondary-bg-100);
+        }
+
+        &_dark {
+            @include hover {
+                background-color: var(--color-primary-bg-100);
+                color: var(--color-primary-bg-200);
+            }
+
+            background-color: var(--color-secondary-bg-200);
+            color: var(--color-secondary-bg-600);
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__icon {
+        @extend %position-center;
+
+        &_arrow-down-bold {
+            width: 16px;
+            height: 10px;
+        }
+
+        &_cross {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
