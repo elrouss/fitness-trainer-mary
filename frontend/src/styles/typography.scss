@@ -9,9 +9,10 @@ $typography:
     "p2" "Inter" 600 16px 19.36px,
     "p3" "Inter" 500 20px 22px,
     "p4" "Inter" 500 16px 19.36px,
-    "p5" "Inter" 400 16px 16px,
-    "p6" "Inter" 400 14px 20px,
-    "p7" "Inter" 400 12px 14.52px;
+    "p5" "Inter" 400 16px 19.36px,
+    "p6" "Inter" 400 16px 16px,
+    "p7" "Inter" 400 14px 20px,
+    "p8" "Inter" 400 12px 14.52px;
 
 @mixin typography(
     $className,

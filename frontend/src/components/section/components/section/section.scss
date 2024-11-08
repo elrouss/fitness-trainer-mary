@@ -10,6 +10,8 @@
     }
 
     &__wrapper {
-        padding: var(--spacing-100) var(--spacing-400);
+        max-width: var(--container-main);
+        padding: var(--spacing-100) 0;
+        margin: 0 auto;
     }
 }
