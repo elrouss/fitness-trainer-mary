@@ -2,10 +2,16 @@
   "name": "frontend",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "http://elrouss.github.io/fitness-trainer-mary",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elrouss/fitness-trainer-mary.git"
+  },
   "scripts": {
     "start": "webpack serve --open",
     "build:dev": "webpack",
     "build:prod": "webpack --node-env=production",
+    "deploy": "gh-pages -d dist",
     "clean": "rd /s /q dist",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
@@ -28,6 +34,7 @@
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "eslint": "^9.14.0",
+    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.6",
