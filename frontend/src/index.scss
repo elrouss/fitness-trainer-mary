@@ -13,6 +13,7 @@
 
 // COMPONENTS
 @use 'components/accordion/index' as accordion;
+@use 'components/header/index' as header;
 @use 'components/section/index' as section;
 
 // UI
@@ -20,4 +21,6 @@
 @use 'ui/checkbox/checkbox';
 @use 'ui/checkbox2/checkbox2';
 @use 'ui/icon-button/icon-button';
+@use 'ui/link-button/link-button';
+@use 'ui/logo/logo';
 @use 'ui/spinner/spinner';

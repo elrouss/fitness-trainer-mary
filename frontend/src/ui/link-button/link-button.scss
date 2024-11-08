@@ -1,0 +1,30 @@
+@use "styles/mixins" as *;
+
+.link-button {
+    @include transition('color');
+
+    @include hover {
+        color: var(--color-secondary-bg-600);
+    }
+
+    @include active {
+        color: var(--color-secondary-bg-600);
+    }
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-500);
+    background-color: var(--color-primary-bg-100);
+    color: var(--color-primary-accent-100);
+
+    &__icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+    }
+}

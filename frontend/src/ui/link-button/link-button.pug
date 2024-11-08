@@ -1,0 +1,10 @@
+mixin link-button(props = {})
+    a.link-button(
+        class=props.class,
+        href=props.href,
+        target="_blank",
+        rel="noopener noreferrer",
+        aria-label=props.ariaLabel
+    )&attributes(attributes)
+        span.link-button__icon-wrapper
+            +icon(props.icon)
