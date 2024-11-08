@@ -65,25 +65,26 @@ module.exports = [
     generator: {
       filename: 'assets/images/[name].[contenthash].[ext]',
     },
-    use: [
-      {
-        loader: 'image-webpack-loader',
-        options: {
-          mozjpeg: {
-            progressive: true,
-          },
-          optipng: {
-            enabled: false,
-          },
-          pngquant: {
-            quality: [0.65, 0.9],
-            speed: 4,
-          },
-          webp: {
-            quality: 75,
-          },
-        },
-      },
-    ],
+    // TODO: временно закомментировал, так как не подтягиваются изображения. Надо смотреть
+    // use: [
+    //   {
+    //     loader: 'image-webpack-loader',
+    //     options: {
+    //       mozjpeg: {
+    //         progressive: true,
+    //       },
+    //       optipng: {
+    //         enabled: false,
+    //       },
+    //       pngquant: {
+    //         quality: [0.65, 0.9],
+    //         speed: 4,
+    //       },
+    //       webp: {
+    //         quality: 75,
+    //       },
+    //     },
+    //   },
+    // ],
   },
 ];

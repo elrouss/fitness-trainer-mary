@@ -1,0 +1,43 @@
+.section-hero {
+    background-color: var(--color-primary-bg-100);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        max-width: var(--container-main);
+        height: calc(100vh - 70px);
+        padding: var(--spacing-500) 0;
+        margin: 0 auto;
+        background: center / 46.6% no-repeat url("./assets/images/hero.png");
+        background-position: right 22% bottom 0;
+        color: var(--color-secondary-bg-300);
+    }
+
+    &__title {
+        width: 70.28%;
+        color: var(--color-secondary-bg-600);
+    }
+
+    &__motto {
+        max-width: 260px;
+        margin-bottom: var(--spacing-550);
+        text-transform: uppercase;
+    }
+
+    &__accent-word {
+        position: relative;
+        text-indent: -4px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: -2px;
+            bottom: -15px;
+            width: 471px;
+            height: 127px;
+            background: center / cover no-repeat
+                url("./assets/images/signature-mary.png");
+        }
+    }
+}
