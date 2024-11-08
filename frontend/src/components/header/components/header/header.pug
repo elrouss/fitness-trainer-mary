@@ -37,7 +37,10 @@ mixin header(props = {})
 
     header.header&attributes(attributes)
         .header__wrapper
-            a.header__logo-link(href="#", aria-label="Прокрутить страницу к началу")
+            a.header__logo-link(
+                href="#",
+                aria-label="Прокрутить страницу к началу"
+            )
                 span.header__backdrop.header__backdrop_logo
                     +logo
 

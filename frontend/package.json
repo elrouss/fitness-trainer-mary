@@ -11,7 +11,7 @@
     "start": "webpack serve --open",
     "build:dev": "webpack",
     "build:prod": "webpack --node-env=production",
-    "deploy": "gh-pages -d dist",
+    "deploy:dev": "npm run build:dev && gh-pages -d dist",
     "clean": "rd /s /q dist",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
