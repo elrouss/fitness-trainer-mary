@@ -1,0 +1,10 @@
+mixin section(props = {})
+    -
+        const theme = props.theme || 'dark'
+
+    section.section&attributes(attributes)(class!=`section_theme_${theme}`)
+        .section__wrapper
+            if props.title
+                +section-title({ title: props.title, theme })
+
+            block section

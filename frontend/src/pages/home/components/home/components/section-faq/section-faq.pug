@@ -1,0 +1,7 @@
+extends ../../../../../../components/section/index
+
+mixin section-faq(props = {})
+    +section({ theme: 'light', title: { align: 'center', startText: 'Часто задаваемые ', endText: 'вопросы' } })
+
+block section
+    +faq.section-faq

@@ -1,0 +1,21 @@
+.section-title {
+    &_theme {
+        &_light {
+            color: var(--color-primary-bg-100);
+        }
+
+        &_dark {
+            color: var(--color-secondary-bg-600);
+        }
+    }
+
+    &_align {
+        &_center {
+            text-align: center;
+        }
+    }
+
+    &__accent-word {
+        color: var(--color-primary-accent-100);
+    }
+}

@@ -1,0 +1,10 @@
+mixin accordion-item(props = {})
+    #{props.tag || 'h3'}.accordion-item&attributes(attributes)
+        button.accordion-item__button.h3(type="button")
+            span.accordion-item__counter= props.counter
+
+            span.accordion-item__title!= props.title
+
+            span.accordion-item__panel.accordion-item__panel_hidden.p3!= props.panel
+
+            +icon-button({ icon: 'arrow-down-bold', theme: 'dark' }).accordion-item__icon-button

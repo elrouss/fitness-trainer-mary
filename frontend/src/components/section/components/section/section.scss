@@ -1,0 +1,15 @@
+.section {
+    &_theme {
+        &_light {
+            background-color: var(--color-primary-bg-200);
+        }
+
+        &_dark {
+            background-color: var(--color-primary-bg-100);
+        }
+    }
+
+    &__wrapper {
+        padding: var(--spacing-100) var(--spacing-400);
+    }
+}

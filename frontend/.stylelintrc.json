@@ -13,6 +13,7 @@
 	],
     "rules": {
         "selector-max-id": 0,
+		"selector-class-pattern": null,
 
         "order/order": [
 			[

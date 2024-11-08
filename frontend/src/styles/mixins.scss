@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:list";
 
 @mixin media($property, $deviceSize) {
     @media screen and (#{$property}: #{$deviceSize}px) {
@@ -11,6 +12,12 @@
         &:hover {
             @content;
         }
+    }
+}
+
+@mixin active {
+    &:active {
+        @content;
     }
 }
 
@@ -40,4 +47,29 @@
 
 @mixin line-height($lineHeight, $fontSize) {
     line-height: math.div($lineHeight, $fontSize) * 100%;
+}
+
+@mixin transition(
+    $properties,
+    $duration: var(--transition-duration-basic),
+    $easing-func: var(--transition-easing-func)
+) {
+    $transitions: ();
+
+    @each $property in $properties {
+        $transitions: list.append(
+            $transitions,
+            #{$property} #{$duration} #{$easing-func},
+            "comma"
+        );
+    }
+
+    transition: $transitions;
+}
+
+@mixin line-clamp($num-lines: 2) {
+    display: -webkit-box;
+    overflow-y: hidden;
+    -webkit-line-clamp: $num-lines;
+    -webkit-box-orient: vertical;
 }
