@@ -145,7 +145,7 @@ class FlipCardPrimary extends services_init_component_init_component__WEBPACK_IM
         const fragment = document.createDocumentFragment();
         services.forEach((service) => {
             const li = document.createElement('li');
-            li.classList.add('flip-card-primary__services-item');
+            li.classList.add('flip-card-primary__services-list-item');
             li.textContent = service.title;
             fragment.append(li);
         });
@@ -517,4 +517,4 @@ module.exports = __webpack_require__.p + "assets/images/mary-3.fbe77101e9c85c48f
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.e617742abaa380deced4.js.map
+//# sourceMappingURL=main.8856801b67f82e43f75a.js.map
