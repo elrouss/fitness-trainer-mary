@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PostCssPresetEnvPlugin = require('postcss-preset-env');
-const loader = require('sass-loader');
 
 module.exports = [
   {

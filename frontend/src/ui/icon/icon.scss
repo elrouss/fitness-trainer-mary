@@ -1,0 +1,26 @@
+$icons:
+    "arrow-down-bold" 16 16,
+    "arrow" 10 10,
+    "book" 22 18,
+    "checkmark" 10 8,
+    "cross" 14 14,
+    "email" 20 20,
+    "logo" 90 42,
+    "online" 24 24,
+    "pdf" 22 24,
+    "person" 24 24,
+    "people" 52 24,
+    "spinner" 21 20,
+    "telegram" 22 18,
+    "whatsapp" 20 20;
+
+@mixin size($icons) {
+    @each $icon, $width, $height in $icons {
+        .icon-#{$icon} {
+            width: #{$width}px;
+            height: #{$height}px;
+        }
+    }
+}
+
+@include size($icons);

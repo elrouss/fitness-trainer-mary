@@ -5,7 +5,7 @@ mixin icon-button(props = {})
     mixin ico(icon = '')
         if props.icon
             span.icon-button__wrapper
-                +icon(icon).icon-button__icon(class=`icon-button__icon_${icon}`)
+                +icon(icon).icon-button__icon
 
     if isTagButton
         button.icon-button&attributes(attributes)(

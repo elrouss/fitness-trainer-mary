@@ -1,0 +1,10 @@
+mixin outline-button(props = {})
+    button.outline-button&attributes(attributes)(
+        class!=`outline-button_theme_${props.theme || 'light'}`
+    )
+        span
+            if props.icon
+                span.outline-button__icon-wrapper
+                    +icon(props.icon)
+
+        span.outline-button__text.h4!= props.text

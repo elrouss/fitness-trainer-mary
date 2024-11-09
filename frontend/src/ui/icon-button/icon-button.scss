@@ -45,15 +45,5 @@
 
     &__icon {
         @extend %position-center;
-
-        &_arrow-down-bold {
-            width: 16px;
-            height: 10px;
-        }
-
-        &_cross {
-            width: 14px;
-            height: 14px;
-        }
     }
 }

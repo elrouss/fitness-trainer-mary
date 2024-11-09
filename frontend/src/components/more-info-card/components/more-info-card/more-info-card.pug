@@ -1,0 +1,11 @@
+mixin more-info-card(props = {})
+    a.more-info-card&attributes(attributes)(
+        href!=props.href || '#',
+        target!="_blank",
+        rel="noopener noreferrer",
+        aria-label=props.ariaLabel
+    )
+        article.more-info-card__article
+            #{props.tag || 'h3'}.h3!= props.title
+
+            +outline-button({ text: props.text, icon: props.icon, theme: props.theme }).more-info-card__button

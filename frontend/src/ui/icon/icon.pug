@@ -1,3 +1,3 @@
 mixin icon(id = '')
-    svg&attributes(attributes)
+    svg&attributes(attributes)(class!=`icon-${id}`)
         use(xlink:href=`spritemap.svg#sprite-${id}`)
