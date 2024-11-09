@@ -66,7 +66,7 @@ export class FlipCardPrimary extends InitComponent {
         services.forEach((service) => {
             const li = document.createElement('li');
 
-            li.classList.add('flip-card-primary__services-item');
+            li.classList.add('flip-card-primary__services-list-item');
             li.textContent = service.title;
 
             fragment.append(li);
