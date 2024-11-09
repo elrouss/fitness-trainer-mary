@@ -1,0 +1,111 @@
+@use "styles/mixins" as *;
+
+.flip-card-secondary {
+    $this: &;
+
+    @include hover {
+        #{$this}__wrapper {
+            width: 100%;
+            height: 100%;
+            transform: rotateY(180deg);
+        }
+    }
+
+    position: relative;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+
+    &_theme {
+        &_brand {
+            color: var(--color-secondary-bg-600);
+
+            #{$this}__front,
+            #{$this}__back {
+                background-color: var(--color-primary-main-100);
+            }
+        }
+
+        &_calm {
+            color: var(--color-secondary-bg-100);
+
+            #{$this}__front,
+            #{$this}__back {
+                background-color: var(--color-secondary-bg-600);
+            }
+        }
+    }
+
+    &__wrapper {
+        @include transition("transform");
+
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: var(--spacing-400);
+        transform-style: preserve-3d;
+    }
+
+    &__front,
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--spacing-400);
+        border-radius: var(--radius-500);
+        backface-visibility: hidden;
+    }
+
+    &__front {
+        display: grid;
+        grid:
+            "img . title . icon" auto
+            "img . details . icon" auto
+            / auto var(--spacing-500) auto var(--spacing-700) auto;
+    }
+
+    &__back {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transform: rotateY(180deg);
+    }
+
+    &__img-wrapper {
+        grid-area: img;
+        width: 124px;
+        height: 100%;
+        min-height: 186px;
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius-500);
+    }
+
+    &__title {
+        grid-area: title;
+        white-space: pre-wrap;
+    }
+
+    &__title-back {
+        white-space: pre-wrap;
+        color: var(--color-primary-accent-100);
+    }
+
+    &__details {
+        grid-area: details;
+        margin-top: auto;
+        color: var(--color-secondary-bg-500);
+    }
+
+    &__icon {
+        grid-area: icon;
+        justify-self: flex-end;
+    }
+}

@@ -1,0 +1,20 @@
+mixin flip-card-primary(props = {})
+    template.flip-card-primary-template
+        article.flip-card-primary
+            .flip-card-primary__wrapper
+                .flip-card-primary__front
+                    .flip-card-primary__img-wrapper
+                        img.flip-card-primary__img
+
+                    h3.h3.flip-card-primary__title
+
+                    ul.flip-card-primary__services-list
+
+                    //- Костыль
+                    +icon('person').flip-card-primary__icon.flip-card-primary__icon_person
+                    +icon('people').flip-card-primary__icon.flip-card-primary__icon_people
+
+                .flip-card-primary__back
+                    h3.h3.flip-card-primary__title-back
+
+                    ul.flip-card-primary__price-list

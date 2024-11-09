@@ -1,0 +1,43 @@
+@use "styles/mixins" as *;
+
+.outline-button {
+    @include transition(("color", "background-color"));
+
+    display: inline-flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px 9px;
+    border-radius: var(--radius-500);
+    user-select: none;
+
+    &_theme {
+        &_light {
+            @include hover {
+                background-color: var(--color-secondary-bg-600);
+                color: var(--color-secondary-bg-100);
+            }
+
+            border: 1px solid var(--color-secondary-bg-600);
+            color: var(--color-secondary-bg-600);
+        }
+
+        &_dark {
+            @include hover {
+                border-color: var(--color-primary-main-300);
+                background-color: var(--color-primary-main-300);
+            }
+
+            border: 1px solid var(--color-secondary-bg-200);
+            color: var(--color-secondary-bg-200);
+        }
+    }
+
+    &__icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+    }
+}

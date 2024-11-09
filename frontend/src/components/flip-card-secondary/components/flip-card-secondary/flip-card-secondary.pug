@@ -1,0 +1,18 @@
+mixin flip-card-secondary(props = {})
+    template.flip-card-secondary-template
+        article.flip-card-secondary
+            .flip-card-secondary__wrapper
+                .flip-card-secondary__front
+                    .flip-card-secondary__img-wrapper
+                        img.flip-card-secondary__img
+
+                    h3.h3.flip-card-secondary__title
+
+                    p.p2.flip-card-secondary__details
+
+                    +icon('online').flip-card-secondary__icon
+
+                .flip-card-secondary__back
+                    h3.h3.flip-card-secondary__title-back
+
+                    p.flip-card-secondary__price.h2
