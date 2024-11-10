@@ -1,0 +1,46 @@
+.benefit-card-text {
+    $this: &;
+
+    display: grid;
+    grid:
+        ". . title" max-content
+        ". . ." var(--spacing-600)
+        ". . description" auto
+        / auto var(--spacing-550) auto;
+    height: 100%;
+    min-height: 260px;
+    padding: var(--spacing-500);
+    border: 1px solid var(--color-secondary-bg-500);
+    border-radius: var(--radius-400);
+
+    &_theme {
+        &_dark {
+            background-color: var(--color-primary-bg-100);
+            color: var(--color-secondary-bg-600);
+
+            #{$this}__description {
+                color: var(--color-secondary-bg-500);
+            }
+        }
+
+        &_light {
+            background-color: var(--color-secondary-bg-600);
+            color: var(--color-secondary-bg-100);
+
+            #{$this}__description {
+                color: var(--color-primary-accent-100);
+            }
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        text-transform: uppercase;
+        hyphens: auto;
+    }
+
+    &__description {
+        grid-area: description;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,1 @@
+import './components/benefit-card-img/benefit-card-img';
