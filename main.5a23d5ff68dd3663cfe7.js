@@ -89,6 +89,92 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 9524:
+/*!*****************************************************************************************!*\
+  !*** ./src/components/benefit-card-img/components/benefit-card-img/benefit-card-img.ts ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BenefitCardImg: () => (/* binding */ BenefitCardImg)
+/* harmony export */ });
+/* harmony import */ var services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! services/init-component/init-component */ 8560);
+
+class BenefitCardImg extends services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__.InitComponent {
+    rootClassName;
+    constructor(rootClassName) {
+        super();
+        this.rootClassName = rootClassName;
+    }
+    render = (data) => {
+        try {
+            const template = document.querySelector(this.rootClassName);
+            if (!(template instanceof HTMLTemplateElement)) {
+                throw new Error('Не найден шаблон карточки');
+            }
+            const templateContent = template.content.cloneNode(true);
+            const card = templateContent.querySelector('.benefit-card-img');
+            const img = card.querySelector('.benefit-card-img__img');
+            img.src = data.img;
+            img.alt = data.alt;
+            return card;
+        }
+        catch (error) {
+            console.error(error);
+            return null;
+        }
+    };
+}
+
+
+/***/ }),
+
+/***/ 5896:
+/*!********************************************************************************************!*\
+  !*** ./src/components/benefit-card-text/components/benefit-card-text/benefit-card-text.ts ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BenefitCardText: () => (/* binding */ BenefitCardText)
+/* harmony export */ });
+/* harmony import */ var services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! services/init-component/init-component */ 8560);
+
+class BenefitCardText extends services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__.InitComponent {
+    rootClassName;
+    constructor(rootClassName) {
+        super();
+        this.rootClassName = rootClassName;
+    }
+    render = (data, cardsCounter) => {
+        try {
+            const template = document.querySelector(this.rootClassName);
+            if (!(template instanceof HTMLTemplateElement)) {
+                throw new Error('Не найден шаблон карточки');
+            }
+            const templateContent = template.content.cloneNode(true);
+            const card = templateContent.querySelector('.benefit-card-text');
+            const counter = card.querySelector('.benefit-card-text__counter');
+            const title = card.querySelector('.benefit-card-text__title');
+            const description = card.querySelector('.benefit-card-text__description');
+            card.classList.add(`benefit-card-text_theme_${data.theme}`);
+            counter.textContent = `${cardsCounter}.`;
+            title.textContent = data.title;
+            description.textContent = data.description;
+            return card;
+        }
+        catch (error) {
+            console.error(error);
+            return null;
+        }
+    };
+}
+
+
+/***/ }),
+
 /***/ 1565:
 /*!********************************************************************************************!*\
   !*** ./src/components/flip-card-primary/components/flip-card-primary/flip-card-primary.ts ***!
@@ -182,19 +268,6 @@ class FlipCardPrimary extends services_init_component_init_component__WEBPACK_IM
 
 /***/ }),
 
-/***/ 9557:
-/*!***************************************************!*\
-  !*** ./src/components/flip-card-primary/index.ts ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_flip_card_primary_flip_card_primary__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/flip-card-primary/flip-card-primary */ 1565);
-
-
-
-/***/ }),
-
 /***/ 5465:
 /*!**************************************************************************************************!*\
   !*** ./src/components/flip-card-secondary/components/flip-card-secondary/flip-card-secondary.ts ***!
@@ -279,18 +352,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ 3686);
 /* harmony import */ var _services_init_component_init_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/init-component/init-component */ 8560);
 /* harmony import */ var _pages_home_components_home_components_section_workout_section_workout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/home/components/home/components/section-workout/section-workout */ 1352);
-/* harmony import */ var _components_accordion_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/accordion/index */ 1540);
-/* harmony import */ var _components_flip_card_primary_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/flip-card-primary/index */ 9557);
+/* harmony import */ var _pages_home_components_home_components_section_benefits_section_benefits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/home/components/home/components/section-benefits/section-benefits */ 5213);
+/* harmony import */ var _components_accordion_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/accordion/index */ 1540);
 
 // SERVICES
 
 // PAGES
 
+
 // MODULES
 // COMPONENTS
 
-
 // UI
+
+
+/***/ }),
+
+/***/ 6292:
+/*!********************************************************************!*\
+  !*** ./src/pages/home/components/home/components/mock/benefits.ts ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MOCK_BENEFITS: () => (/* binding */ MOCK_BENEFITS)
+/* harmony export */ });
+/* harmony import */ var assets_images_mary_4_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! assets/images/mary-4.jpg */ 7914);
+/* harmony import */ var assets_images_mary_5_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! assets/images/mary-5.jpg */ 6199);
+
+
+const MOCK_BENEFITS = [
+    {
+        theme: 'dark',
+        title: 'Индивидуальный подход',
+        description: 'Тренер разрабатывает программу тренировок, основанную на Ваших целях, уровне фитнеса и физическом состоянии. Тренер разрабатывает программу тренировок'
+    },
+    {
+        theme: 'light',
+        title: 'Мотивация и поддержка',
+        description: 'Тренер разрабатывает программу тренировок, основанную на Ваших целях, уровне фитнеса и физическом состоянии'
+    },
+    {
+        theme: 'img',
+        img: assets_images_mary_4_jpg__WEBPACK_IMPORTED_MODULE_0__,
+        alt: 'Победа Марии на соревновании'
+    },
+    {
+        theme: 'img',
+        img: assets_images_mary_5_jpg__WEBPACK_IMPORTED_MODULE_1__,
+        alt: 'Мария тренируется с гантелями'
+    },
+    {
+        theme: 'light',
+        title: 'Регулярная оценка прогресса',
+        description: 'Тренер разрабатывает программу тренировок, основанную на Ваших целях, уровне фитнеса и физическом состоянии'
+    },
+    {
+        theme: 'dark',
+        title: 'Разнообразие тренировок',
+        description: 'Тренер разрабатывает программу тренировок, основанную на Ваших целях, уровне фитнеса и физическом состоянии'
+    }
+];
 
 
 /***/ }),
@@ -365,6 +488,72 @@ const MOCK_WORKOUT = [
 
 /***/ }),
 
+/***/ 5213:
+/*!****************************************************************************************!*\
+  !*** ./src/pages/home/components/home/components/section-benefits/section-benefits.ts ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! services/init-component/init-component */ 8560);
+/* harmony import */ var components_benefit_card_img_components_benefit_card_img_benefit_card_img__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/benefit-card-img/components/benefit-card-img/benefit-card-img */ 9524);
+/* harmony import */ var components_benefit_card_text_components_benefit_card_text_benefit_card_text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/benefit-card-text/components/benefit-card-text/benefit-card-text */ 5896);
+/* harmony import */ var _mock_benefits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mock/benefits */ 6292);
+
+
+
+
+const classNames = {
+    root: 'section-benefits__list'
+};
+class SectionBenefits extends services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__.InitComponent {
+    root;
+    textCardsCounter;
+    constructor(root) {
+        super();
+        this.root = root;
+        this.textCardsCounter = 0;
+    }
+    renderSection = (data) => {
+        const fragment = document.createDocumentFragment();
+        data.forEach((item) => {
+            let benefitCard = null;
+            let benefitCardImgTemplate;
+            let benefitCardTextTemplate;
+            if (item.theme === 'img') {
+                benefitCardImgTemplate = new components_benefit_card_img_components_benefit_card_img_benefit_card_img__WEBPACK_IMPORTED_MODULE_1__.BenefitCardImg('.benefit-card-img-template');
+            }
+            else {
+                benefitCardTextTemplate = new components_benefit_card_text_components_benefit_card_text_benefit_card_text__WEBPACK_IMPORTED_MODULE_2__.BenefitCardText('.benefit-card-text-template');
+                this.incrementTextCardsCounter();
+            }
+            if (benefitCardImgTemplate) {
+                benefitCard = benefitCardImgTemplate.render(item);
+            }
+            else if (benefitCardTextTemplate) {
+                benefitCard = benefitCardTextTemplate.render(item, this.textCardsCounter);
+            }
+            if (benefitCard) {
+                const li = document.createElement('li');
+                li.classList.add('section-benefits__list-item');
+                li.append(benefitCard);
+                fragment.append(li);
+            }
+        });
+        this.root?.append(fragment);
+    };
+    incrementTextCardsCounter = () => {
+        this.textCardsCounter++;
+    };
+    static init = () => {
+        services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__.InitComponent.init(`.${classNames.root}`, (root) => new SectionBenefits(root).renderSection(_mock_benefits__WEBPACK_IMPORTED_MODULE_3__.MOCK_BENEFITS));
+    };
+}
+SectionBenefits.init();
+
+
+/***/ }),
+
 /***/ 1352:
 /*!**************************************************************************************!*\
   !*** ./src/pages/home/components/home/components/section-workout/section-workout.ts ***!
@@ -381,9 +570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const classNames = {
-    root: 'section-workout__cards-list',
-    primaryFlipCard: 'flip-card-primary-template',
-    secondaryFlipCard: 'flip-card-secondary-template'
+    root: 'section-workout__cards-list'
 };
 class SectionWorkout extends services_init_component_init_component__WEBPACK_IMPORTED_MODULE_0__.InitComponent {
     root;
@@ -398,8 +585,8 @@ class SectionWorkout extends services_init_component_init_component__WEBPACK_IMP
                 ? new components_flip_card_primary_components_flip_card_primary_flip_card_primary__WEBPACK_IMPORTED_MODULE_1__.FlipCardPrimary('.flip-card-primary-template')
                 : new components_flip_card_secondary_components_flip_card_secondary_flip_card_secondary__WEBPACK_IMPORTED_MODULE_2__.FlipCardSecondary('.flip-card-secondary-template');
             const flipCard = flipCardTemplate.render(item);
-            const li = document.createElement('li');
             if (flipCard) {
+                const li = document.createElement('li');
                 li.classList.add('section-workout__cards-list-item');
                 li.append(flipCard);
                 fragment.prepend(li);
@@ -508,6 +695,26 @@ module.exports = __webpack_require__.p + "assets/images/mary-2.29c495ae9a1b949dc
 
 module.exports = __webpack_require__.p + "assets/images/mary-3.fbe77101e9c85c48f60c..jpg";
 
+/***/ }),
+
+/***/ 7914:
+/*!**************************************!*\
+  !*** ./src/assets/images/mary-4.jpg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/mary-4.9fee2ab7f77c6afc26cf..jpg";
+
+/***/ }),
+
+/***/ 6199:
+/*!**************************************!*\
+  !*** ./src/assets/images/mary-5.jpg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/images/mary-5.95ceda4e34e6e41d743b..jpg";
+
 /***/ })
 
 },
@@ -517,4 +724,4 @@ module.exports = __webpack_require__.p + "assets/images/mary-3.fbe77101e9c85c48f
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.8856801b67f82e43f75a.js.map
+//# sourceMappingURL=main.5a23d5ff68dd3663cfe7.js.map

@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <title></title>
-  <script defer src="runtime.a56021b62fa3387f61fa.js"></script><script defer src="vendors.6e60d0ec6893582399d1.js"></script><script defer src="main.8856801b67f82e43f75a.js"></script><link href="index.99dba7593e34062fb318.css" rel="stylesheet"></head>
+  <script defer src="runtime.a56021b62fa3387f61fa.js"></script><script defer src="vendors.6e60d0ec6893582399d1.js"></script><script defer src="main.5a23d5ff68dd3663cfe7.js"></script><link href="index.0044d06fe763a33bf6d5.css" rel="stylesheet"></head>
   <body>
     <header class="header">
       <div class="header__wrapper"><a class="header__logo-link" href="#" aria-label="Прокрутить страницу к началу"><span class="header__backdrop header__backdrop_logo">
@@ -73,6 +73,12 @@
           </ul>
         </div>
       </section>
+      <section class="section section_theme_dark section-benefits">
+        <div class="section__wrapper">
+          <h2 class="section-title h2 section-title_theme_dark section-title_align_left section-title_signature_benefits"><span>Преимущества занятий </span><span class="section-title__accent-word">со&nbsp;мной</span></h2>
+          <ul class="section-benefits__list"></ul>
+        </div>
+      </section>
       <section class="section section_theme_light">
         <div class="section__wrapper">
           <h2 class="section-title h2 section-title_theme_light section-title_align_center"><span>Часто задаваемые </span><span class="section-title__accent-word">вопросы</span></h2>
@@ -126,8 +132,14 @@
         </div>
       </section>
     </main>
-    <template class="outline-button-template">
-      <button class="outline-button outline-button_theme_light"><span></span><span class="outline-button__text h4"></span></button>
+    <template class="benefit-card-img-template">
+      <article class="benefit-card-img"><img class="benefit-card-img__img"/></article>
+    </template>
+    <template class="benefit-card-text-template">
+      <article class="benefit-card-text"><span class="benefit-card-text__counter p1"></span>
+        <h3 class="benefit-card-text__title p1"></h3>
+        <p class="benefit-card-text__description p2"></p>
+      </article>
     </template>
     <template class="flip-card-primary-template">
       <article class="flip-card-primary">
@@ -167,6 +179,9 @@
           </div>
         </div>
       </article>
+    </template>
+    <template class="outline-button-template">
+      <button class="outline-button outline-button_theme_light"><span></span><span class="outline-button__text h4"></span></button>
     </template>
   </body>
 </html>
