@@ -13,6 +13,8 @@
 
 // COMPONENTS
 @use 'components/accordion/index' as accordion;
+@use 'components/benefit-card-img/index' as benefit-card-img;
+@use 'components/benefit-card-text/index' as benefit-card-text;
 @use 'components/flip-card-primary/index' as flip-card-primary;
 @use 'components/flip-card-secondary/index' as flip-card-secondary;
 @use 'components/header/index' as header;

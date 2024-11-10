@@ -3,12 +3,11 @@ import { FlipCardPrimary } from 'components/flip-card-primary/components/flip-ca
 import { FlipCardSecondary } from 'components/flip-card-secondary/components/flip-card-secondary/flip-card-secondary';
 
 import { MOCK_WORKOUT } from '../mock/workout';
-import { IFlipCard } from 'types/flip-card';
+
+import type { IFlipCard } from 'types/flip-card';
 
 const classNames = {
-    root: 'section-workout__cards-list',
-    primaryFlipCard: 'flip-card-primary-template',
-    secondaryFlipCard: 'flip-card-secondary-template'
+    root: 'section-workout__cards-list'
 } as const;
 
 class SectionWorkout extends InitComponent {
@@ -30,9 +29,9 @@ class SectionWorkout extends InitComponent {
 
             const flipCard = flipCardTemplate.render(item);
 
-            const li = document.createElement('li');
-
             if (flipCard) {
+                const li = document.createElement('li');
+
                 li.classList.add('section-workout__cards-list-item');
                 li.append(flipCard);
 

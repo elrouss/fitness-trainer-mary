@@ -10,8 +10,29 @@
     }
 
     &_align {
+        &_left {
+            max-width: 586px;
+        }
+
         &_center {
             text-align: center;
+        }
+    }
+
+    &_signature {
+        &_benefits {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -5px;
+                width: 428px;
+                height: 118px;
+                background: center / cover no-repeat
+                    url("./assets/images/signature-benefits.png");
+            }
         }
     }
 
