@@ -1,0 +1,51 @@
+mixin activity-card(props = {})
+    template.activity-card-template(class=`activity-card-template_type_${props.type}`)
+        article.activity-card
+            .activity-card__wrapper
+                header.activity-card__header
+                    h3.activity-card__title.h7
+
+                +img({ img: 'activity-card__img' }).activity-card__img-wrapper(
+                    class=`activity-card__img-wrapper_type_${props.type}`
+                )
+
+                .activity-card__body(class=`activity-card__body_type_${props.type}`)
+                    if props.hasDescription
+                        p.activity-card__description
+
+                    +outline-button({ text: 'Узнать больше' }).activity-card__details-button
+
+                    if props.hasSignupButton
+                        +button({ text: 'Участвовать', theme: 'light' }).activity-card__signup-button
+
+            if props.hasFooter
+                footer.activity-card__footer
+                    ul.activity-card__details-list.h8
+                        li.activity-card__details-list-item
+                            h4.activity-card__detail-title Количество людей:
+
+                            p.activity-card__people
+
+                        li.activity-card__details-list-item
+                            h4.activity-card__detail-title Когда:
+
+                            time.activity-card__date
+                                span.activity-card__date-start
+
+                                |
+                                | &ndash;&nbsp;
+
+                                span.activity-card__date-end
+
+                                |
+                                | (
+
+                                span.activity-card__year
+
+                                |
+                                | год)
+
+                        li.activity-card__details-list-item
+                            h4.activity-card__detail-title Место проведения:
+
+                            address.activity-card__place

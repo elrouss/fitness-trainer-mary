@@ -6,8 +6,23 @@
     clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    white-space: nowrap;
     opacity: 0;
-    clip-path: inset(50%);
+    clip-path: inset(100%);
+}
+
+%hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%text-inline-hidden {
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 %position-center {

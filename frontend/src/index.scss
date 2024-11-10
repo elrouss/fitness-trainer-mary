@@ -10,11 +10,15 @@
 @use 'pages/home/index' as page-home;
 
 // MODULES
+@use 'modules/activity-details/index' as activity-details;
 
 // COMPONENTS
 @use 'components/accordion/index' as accordion;
+@use 'components/activity-card/index' as activity-card;
 @use 'components/benefit-card-img/index' as benefit-card-img;
 @use 'components/benefit-card-text/index' as benefit-card-text;
+@use 'components/dialog/index' as dialog;
+@use 'components/empty-list/index.scss' as empty-list;
 @use 'components/flip-card-primary/index' as flip-card-primary;
 @use 'components/flip-card-secondary/index' as flip-card-secondary;
 @use 'components/header/index' as header;
@@ -27,6 +31,8 @@
 @use 'ui/checkbox2/checkbox2';
 @use 'ui/icon/icon';
 @use 'ui/icon-button/icon-button';
+@use 'ui/img/img';
 @use 'ui/link-button/link-button';
 @use 'ui/outline-button/outline-button';
 @use 'ui/spinner/spinner';
+@use 'ui/tab/tab';

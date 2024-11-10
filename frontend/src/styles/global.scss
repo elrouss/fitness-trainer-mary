@@ -17,6 +17,7 @@ p,
 ul,
 ol,
 li,
+figure,
 a,
 button {
   padding: 0;
@@ -42,4 +43,12 @@ body {
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 500;
     background-color: var(--color-primary-bg-100);
+}
+
+.scroll-lock {
+  overflow-y: hidden;
+}
+
+.hidden {
+  display: none !important;
 }

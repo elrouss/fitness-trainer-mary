@@ -1,0 +1,41 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.tab {
+    @include transition(('border-color, color, background-color'));
+
+    @include hover {
+        background-color: var(--color-secondary-bg-100);
+    }
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    padding: var(--spacing-650);
+    border: 1px solid var(--color-primary-accent-100);
+    color: var(--color-secondary-bg-600);
+    cursor: pointer;
+
+    &:has(input:checked) {
+        border-color: var(--color-secondary-bg-600);
+        background-color: var(--color-secondary-bg-600);
+        color: var(--color-primary-bg-100);
+        cursor: default;
+    }
+
+    &_border-radius {
+        &_left {
+            border-top-left-radius: var(--radius-500);
+            border-bottom-left-radius: var(--radius-500);
+        }
+
+        &_right {
+            border-top-right-radius: var(--radius-500);
+            border-bottom-right-radius: var(--radius-500);
+        }
+    }
+
+    &__input {
+        @extend %visually-hidden;
+    }
+}

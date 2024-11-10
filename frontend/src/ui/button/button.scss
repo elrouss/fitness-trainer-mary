@@ -5,7 +5,7 @@
 
     @include transition(("border-color", "color", "background-color"));
 
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 32px 12px;
