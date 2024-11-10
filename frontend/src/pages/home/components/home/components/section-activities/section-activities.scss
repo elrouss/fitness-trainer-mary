@@ -1,0 +1,11 @@
+.section-activities {
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--spacing-300);
+    }
+
+    &__tab {
+        min-width: 232px;
+    }
+}

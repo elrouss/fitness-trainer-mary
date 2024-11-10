@@ -1,0 +1,7 @@
+mixin tab(props = {})
+    label.tab.p5&attributes(attributes)(
+        class=`tab_border-radius_${props.borderRadiusPosition}`
+    )
+        input.tab__input(type="radio", name=props.name, checked=props.checked)
+
+        span.tab__label= props.label

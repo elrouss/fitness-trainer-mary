@@ -1,0 +1,7 @@
+mixin section-activities(props = {})
+    +section({ title: { align: 'center', startText: 'Мероприятия' } })#activities.section-activities
+        ul.section-activities__tabs
+            li
+                +tab({ label: 'Прошедшие', name: 'activities', borderRadiusPosition: 'left' }).section-activities__tab
+            li
+                +tab({ label: 'Будущие', name: 'activities', checked: true, borderRadiusPosition: 'right' }).section-activities__tab
