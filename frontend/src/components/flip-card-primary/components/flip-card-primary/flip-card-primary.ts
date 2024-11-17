@@ -33,7 +33,7 @@ export class FlipCardPrimary extends InitComponent {
 
             const frontSide = card.querySelector('.flip-card-primary__front') as HTMLDivElement;
             const frontSideTitle = frontSide.querySelector('.flip-card-primary__title') as HTMLHeadingElement;
-            const frontSideImg = frontSide.querySelector('.flip-card-primary__img') as HTMLImageElement;
+            const frontSideImg = frontSide.querySelector('.flip-card-primary__img')?.querySelector('img') as HTMLImageElement;
             const frontSideServices = frontSide.querySelector('.flip-card-primary__services-list') as HTMLUListElement;
 
             const backSide = card.querySelector('.flip-card-primary__back') as HTMLDivElement;

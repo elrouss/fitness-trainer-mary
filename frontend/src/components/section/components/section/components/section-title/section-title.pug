@@ -22,4 +22,4 @@ mixin section-title(props = {})
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
             class!=`section-title_align_${props.title.align || 'left'}`
-        )!= props.title
+        )!= props.title.startText
