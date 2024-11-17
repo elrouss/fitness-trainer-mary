@@ -1,0 +1,46 @@
+mixin activity-details(props = {})
+    +dialog
+        .activity-details__wrapper
+            +img.activity-details__img
+
+            .activity-details__content
+                h2.activity-details__title.h3
+
+                p.activity-details__description.p2
+
+                ul.activity-details__info-list
+                    li.activity-details__info-list-item
+                        h4.activity-details__info-list-item-title.h3 Цена:
+
+                        p.activity-details__price.h4
+
+                    li.activity-details__info-list-item
+                        h4.activity-details__info-list-item-title.h3 Место проведения:
+
+                        address.activity-details__address.h4
+
+                    li.activity-details__info-list-item
+                        h4.activity-details__info-list-item-title.h3 Количество людей:
+
+                        p.activity-details__people.h4
+
+                    li.activity-details__info-list-item
+                        h4.activity-details__info-list-item-title.h3 Когда:
+                        //- TODO: доработать после интеграции с backend (+ атрибут)
+                        time.h4
+                            span.activity-details__date-start
+
+                            |
+                            | &ndash;&nbsp;
+
+                            span.activity-details__date-end
+
+                            |
+                            | (
+
+                            span.activity-details__year
+
+                            |
+                            | год)
+
+                +button({ text: 'Участвовать' }).activity-details__signup-button

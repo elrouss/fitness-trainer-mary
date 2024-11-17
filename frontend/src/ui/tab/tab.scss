@@ -5,7 +5,7 @@
     @include transition(('border-color, color, background-color'));
 
     @include hover {
-        background-color: var(--color-secondary-bg-300);
+        background-color: var(--color-secondary-bg-100);
     }
 
     position: relative;

@@ -1,0 +1,9 @@
+mixin empty-list(props = {})
+    template.empty-list-template
+        figure.empty-list
+            +img({ src: './assets/images/lemon-relax-light.png', alt: 'Лимон со скрещенными ногами' }).empty-list__img
+
+            figcaption.empty-list__caption
+                #{props.tag || 'h3'}.empty-list__title.h3
+
+                p.empty-list__paragraph.p5

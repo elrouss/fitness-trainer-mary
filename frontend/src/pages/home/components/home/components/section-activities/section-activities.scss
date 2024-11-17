@@ -1,11 +1,40 @@
+@use "styles/placeholders" as *;
+
 .section-activities {
     &__tabs {
+        position: relative;
         display: flex;
         justify-content: center;
         margin-top: var(--spacing-300);
     }
 
     &__tab {
+        position: absolute;
         min-width: 232px;
+
+        &_left {
+            left: 50%;
+            transform: translateX(-100%);
+        }
+
+        &_right {
+            right: 50%;
+            transform: translateX(-100%);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-600);
+        margin-top: var(--spacing-400);
+
+        &_empty {
+            display: block;
+        }
+    }
+
+    &__more-button {
+        margin: var(--spacing-400) auto 0;
     }
 }

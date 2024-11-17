@@ -1,0 +1,36 @@
+@use "styles/mixins" as *;
+
+.dialog {
+    @include transition(('opacity', 'visibility'));
+
+    display: block;
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-radius: var(--spacing-550);
+    opacity: 0;
+    visibility: hidden;
+
+    &[open] {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &::backdrop {
+        background-color: var(--color-primary-bg-100);
+        opacity: 0.5;
+    }
+
+    &__wrapper {
+        position: relative;
+        min-width: 1176px;
+        padding: 60px;
+    }
+
+    &__close-button {
+        position: absolute;
+        top: calc(-1 * var(--spacing-650));
+        right: 0;
+        transform: translateY(-100%);
+    }
+}

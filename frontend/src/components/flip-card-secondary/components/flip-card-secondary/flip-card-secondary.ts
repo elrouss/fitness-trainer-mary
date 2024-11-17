@@ -34,7 +34,7 @@ export class FlipCardSecondary extends InitComponent {
 
             const frontSide = card.querySelector('.flip-card-secondary__front') as HTMLDivElement;
             const frontSideTitle = frontSide.querySelector('.flip-card-secondary__title') as HTMLHeadingElement;
-            const frontSideImg = frontSide.querySelector('.flip-card-secondary__img') as HTMLImageElement;
+            const frontSideImg = frontSide.querySelector('.flip-card-secondary__img')?.querySelector('img') as HTMLImageElement;
             const frontSideAdditionalInfo = frontSide.querySelector('.flip-card-secondary__details') as HTMLParagraphElement;
 
             const backSide = card.querySelector('.flip-card-secondary__back') as HTMLDivElement;

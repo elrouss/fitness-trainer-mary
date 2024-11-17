@@ -24,7 +24,7 @@ export default [
             '@stylistic/comma-dangle': 'error',
             '@stylistic/comma-spacing': 'error',
             '@stylistic/comma-style': 'error',
-            '@stylistic/dot-location': 'error',
+            '@stylistic/dot-location': ['error', 'property'],
             '@stylistic/eol-last': ['error', 'always'],
             '@stylistic/implicit-arrow-linebreak': 'error',
             '@stylistic/indent': 'error',
@@ -60,8 +60,7 @@ export default [
                 'error',
                 { blankLine: 'always', prev: '*', next: 'return' },
                 { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-                { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var']},
-                { blankLine: 'always', prev: ['case', 'default'], next: '*' }
+                { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var']}
             ],
             '@stylistic/quote-props': ['error', 'as-needed'],
             '@stylistic/quotes': ['error', 'single'],

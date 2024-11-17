@@ -1,0 +1,25 @@
+.empty-list {
+    max-width: 579px;
+    margin: 0 auto;
+
+    &__img {
+        width: 400px;
+        height: 305px;
+        margin: 0 auto;
+    }
+
+    &__caption {
+        margin-top: var(--spacing-300);
+    }
+
+    &__title {
+        text-align: center;
+        color: var(--color-secondary-bg-600);
+    }
+
+    &__paragraph {
+        margin-top: var(--spacing-600);
+        text-align: center;
+        color: var(--color-primary-accent-100);
+    }
+}

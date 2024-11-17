@@ -10,18 +10,21 @@ mixin icon-button(props = {})
     if isTagButton
         button.icon-button&attributes(attributes)(
             class=`icon-button_theme_${props.theme || 'light'}`,
-            type="button"
+            type="button",
+            aria-label=props.ariaLabel
         )
             +ico(props.icon)
     else if isTagButtonSpan
         span.icon-button&attributes(attributes)(
             class=`icon-button_theme_${props.theme || 'light'}`,
             role="button",
-            tabindex="0"
+            tabindex="0",
+            aria-label=props.ariaLabel
         )
             +ico(props.icon)
     else
         span.icon-button&attributes(attributes)(
-            class=`icon-button_theme_${props.theme || 'light'}`
+            class=`icon-button_theme_${props.theme || 'light'}`,
+            aria-label=props.ariaLabel
         )
             +ico(props.icon)
