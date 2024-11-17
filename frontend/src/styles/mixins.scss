@@ -77,3 +77,19 @@
     -webkit-line-clamp: $num-lines;
     -webkit-box-orient: vertical;
 }
+
+@mixin custom-scroll($width: 4px, $height: 4px) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-corner {
+        background-color: var(--color-primary-accent-100);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary-main-100);
+    }
+}
