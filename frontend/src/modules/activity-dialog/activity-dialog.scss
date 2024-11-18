@@ -1,0 +1,20 @@
+.activity-dialog {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1056px;
+    }
+
+    &__img {
+        flex-shrink: 0;
+        width: 420px;
+        height: 550px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 57.2%;
+        color: var(--color-secondary-bg-100);
+    }
+}

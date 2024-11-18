@@ -1,7 +1,7 @@
 import { InitComponent } from 'services/init-component/init-component';
 
 import { ActivityCard } from 'components/activity-card/components/activity-card/activity-card';
-import { ActivityDetails } from 'modules/activity-details/components/activity-details/activity-details';
+import { ActivityDialog } from 'modules/activity-dialog/activity-dialog';
 
 import { MOCK_ACTIVITIES } from '../mock/activities';
 import { emptyListData } from './constants';
@@ -28,7 +28,7 @@ class SectionActivities extends InitComponent {
     tabsPanelData: TActivities;
     tabsPanelShowedItemsQuantity: number;
 
-    dialog: ActivityDetails | null;
+    dialog: ActivityDialog | null;
 
     constructor (root: HTMLElement | null, data: TActivities) {
         super();
@@ -43,7 +43,7 @@ class SectionActivities extends InitComponent {
         this.tabsPanelData = data;
         this.tabsPanelShowedItemsQuantity = 2;
 
-        this.dialog = new ActivityDetails();
+        this.dialog = new ActivityDialog();
 
         this.renderList(this.tabsPanelData);
         this.toggleMoreButtonState();
@@ -167,15 +167,33 @@ class SectionActivities extends InitComponent {
     };
 
     private openDialog = ({ target }: Event) => {
-        if (target instanceof HTMLElement && target.closest('.activity-card__details-button')) {
-            const li = target.closest('.section-activities__list-item');
-
-            if (li instanceof HTMLLIElement && li) {
-                const selectedCard = Number(li.dataset.index);
-
-                this.dialog?.openDialog(this.tabsPanelData[this.tabsPanelState][selectedCard], this.tabsPanelState);
-            }
+        if (!(target instanceof HTMLElement)) {
+            return;
         }
+
+        let state: 'details' | 'signup';
+
+        if (target.closest('.activity-card__details-button')) {
+            state = 'details';
+        } else if (target.closest('.activity-card__signup-button')) {
+            state = 'signup';
+        } else {
+            return;
+        }
+
+        const li = target.closest('.section-activities__list-item');
+
+        if (!(li instanceof HTMLLIElement) || !li) {
+            return;
+        }
+
+        const selectedCard = Number(li.dataset.index);
+
+        this.dialog?.openDialog({
+            data: this.tabsPanelData[this.tabsPanelState][selectedCard],
+            type: this.tabsPanelState,
+            state
+        });
     };
 
     static init = () => {

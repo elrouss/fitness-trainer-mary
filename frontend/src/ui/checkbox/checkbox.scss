@@ -19,13 +19,13 @@
 
     &:has(input:checked) {
         @include hover {
-            #{$this}__boxWrapper {
+            #{$this}__box-wrapper {
                 & > #{$this}__box {
                     border-color: var(--color-secondary-bg-500);
                 }
             }
         }
-        #{$this}__boxWrapper {
+        #{$this}__box-wrapper {
             & > #{$this}__box {
                 border-color: var(--color-primary-main-100);
                 background-color: var(--color-primary-main-100);
@@ -50,7 +50,7 @@
         @extend %visually-hidden;
     }
 
-    &__boxWrapper {
+    &__box-wrapper {
         position: relative;
         width: 24px;
         height: 24px;

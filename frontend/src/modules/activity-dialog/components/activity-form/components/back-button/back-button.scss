@@ -1,0 +1,23 @@
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    text-transform: uppercase;
+    color: var(--color-primary-accent-100);
+
+    &__icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;
+        height: 42px;
+    }
+
+    &__icon {
+        &#{&} {
+            width: 14px;
+            height: 7px;
+            transform: rotate(90deg);
+        }
+    }
+}

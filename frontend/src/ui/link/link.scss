@@ -1,0 +1,11 @@
+.link {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: currentcolor;
+
+    &_underline {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
