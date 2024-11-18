@@ -1,0 +1,25 @@
+.activity-form {
+    &__subtitle {
+        margin-top: var(--spacing-700);
+        color: var(--color-primary-accent-100);
+    }
+
+    &__inputs {
+        margin-top: var(--spacing-250);
+    }
+
+    &__input {
+        &:not(:first-child) {
+            margin-top: var(--spacing-400);
+        }
+    }
+
+    &__checkbox {
+        margin-top: var(--spacing-350);
+    }
+
+    &__submit-button {
+        width: 100%;
+        margin-top: var(--spacing-700);
+    }
+}

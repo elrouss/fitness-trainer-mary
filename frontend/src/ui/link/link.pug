@@ -1,0 +1,13 @@
+mixin link(props = {})
+    -
+        const target = props.target || '_blank'
+
+    a.link&attributes(attributes)(
+        href=props.href || "#",
+        target=target,
+        rel=`${target === '_blank' ? "noopener noreferrer" : undefined }`,
+        aria-label=props.ariaLabel
+    )(
+        class=props.hasUnderline && "link_underline"
+    )
+        block

@@ -10,7 +10,7 @@
 @use 'pages/home/index' as page-home;
 
 // MODULES
-@use 'modules/activity-details/index' as activity-details;
+@use 'modules/activity-dialog/index' as activity-dialog;
 
 // COMPONENTS
 @use 'components/accordion/index' as accordion;
@@ -33,6 +33,7 @@
 @use 'ui/icon-button/icon-button';
 @use 'ui/img/img';
 @use 'ui/input/input';
+@use 'ui/link//link';
 @use 'ui/link-button/link-button';
 @use 'ui/outline-button/outline-button';
 @use 'ui/spinner/spinner';

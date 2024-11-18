@@ -1,16 +1,15 @@
 mixin input(props = {})
-    .input.p6
+    .input.p6&attributes(attributes)
         label.input__label(for=props.id)
             span.input__label-text(
-                class=props.required ? "input__label-text_required" : undefined
+                class=props.required && "input__label-text_required"
             )!= props.label
 
         .input__input-wrapper
-            input.input__input(
+            input.input__input.p6(
                 id=props.id,
                 type=props.type || "text",
-                placeholder=props.placeholder,
-                required=props.required
+                placeholder=props.placeholder
             )
 
             button.input__icon-status.hidden

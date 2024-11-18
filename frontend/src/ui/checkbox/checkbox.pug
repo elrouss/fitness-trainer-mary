@@ -1,13 +1,16 @@
 mixin checkbox(props = {})
-    label.checkbox.checkbox_error.p4&attributes(attributes)
+    label.checkbox.p7&attributes(attributes)
         input.checkbox__input(type="checkbox")
 
-        if props.label && props.labelPosition == 'left'
-            span.checkbox__label= props.label
+        if props.labelPosition == 'left'
+            span.checkbox__label
+                block
 
-        span.checkbox__boxWrapper
+        span.checkbox__box-wrapper
             span.checkbox__box
+
             +icon('checkmark').checkbox__icon
 
-        if props.label && props.labelPosition == 'right'
-            span.checkbox__label= props.label
+        if props.labelPosition == 'right'
+            span.checkbox__label
+                block
