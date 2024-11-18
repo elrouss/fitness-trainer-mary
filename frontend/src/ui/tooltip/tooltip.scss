@@ -1,0 +1,31 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.tooltip {
+    @extend %hidden;
+    @include transition(("opacity", "visibility"));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    transform: translateY(calc(-100% - 11px));
+
+    &__wrapper {
+        position: relative;
+        min-width: 316px;
+        padding: var(--spacing-600);
+        border-radius: var(--radius-600);
+        background-color: var(--color-secondary-bg-600);
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: var(--spacing-600);
+            bottom: 0;
+            border: 6px solid transparent;
+            border-top: 11px solid var(--color-secondary-bg-600);
+            transform: translate(-50%, 88%);
+        }
+    }
+}

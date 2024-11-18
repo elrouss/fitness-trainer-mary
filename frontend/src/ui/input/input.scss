@@ -1,0 +1,87 @@
+@use "styles/placeholders" as *;
+@use "styles/mixins" as *;
+
+.input {
+    $this: &;
+
+    color: var(--color-secondary-bg-100);
+
+    &__label-text {
+        &_required {
+            &::after {
+                content: "*";
+                margin-left: var(--spacing-750);
+                color: var(--color-status-danger);
+            }
+        }
+    }
+
+    &__input-wrapper {
+        position: relative;
+        margin-top: var(--spacing-700);
+    }
+
+    &__input {
+        @include focus-visible {
+            outline: none;
+        }
+
+        width: 100%;
+        padding: var(--spacing-550) 59px var(--spacing-550) var(--spacing-550);
+        border: 1px solid var(--color-secondary-bg-500);
+        border-radius: var(--radius-500);
+        text-overflow: ellipsis;
+        background-color: var(--color-secondary-bg-600);
+        color: currentcolor;
+
+        &::placeholder {
+            color: var(--color-secondary-bg-375);
+        }
+    }
+
+    &__icon-status {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        width: 24px;
+        height: 24px;
+        border-radius: var(--radius-100);
+        cursor: default;
+        transform: translateY(-50%);
+
+        &_success {
+            background-color: var(--color-status-success);
+
+            &::after {
+                @extend %position-center;
+
+                content: "";
+                width: 10px;
+                height: 8px;
+                background: center / cover no-repeat
+                    url("assets/icons/checkmark-light.svg");
+            }
+        }
+
+        &_error {
+            @include hover {
+                + #{$this}__tooltip {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            background-color: var(--color-status-danger);
+
+            &::after {
+                @extend %position-center;
+
+                content: "";
+                width: 10px;
+                height: 10px;
+                background: center / cover no-repeat
+                    url("assets/icons/cross-light.svg");
+            }
+        }
+    }
+}

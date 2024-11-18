@@ -19,6 +19,11 @@
     visibility: hidden;
 }
 
+%visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 %text-inline-hidden {
     overflow-y: hidden;
     text-overflow: ellipsis;
