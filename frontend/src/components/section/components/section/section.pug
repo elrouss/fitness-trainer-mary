@@ -3,8 +3,8 @@ mixin section(props = {})
         const theme = props.theme || 'dark'
 
     section.section&attributes(attributes)(class!=`section_theme_${theme}`)
-        .section__wrapper
+        .section__wrapper(class=props.classNames && props.classNames.wrapper)
             if props.title
                 +section-title({ title: props.title, theme })
 
-                block
+            block

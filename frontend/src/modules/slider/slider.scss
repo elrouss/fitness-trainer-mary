@@ -1,0 +1,36 @@
+.slider {
+    position: relative;
+
+    &__wrapper {
+        .img__img {
+            border-radius: var(--radius-500);
+        }
+    }
+
+    &__nav-buttons {
+        position: absolute;
+        right: var(--spacing-375);
+        bottom: var(--spacing-375);
+        z-index: 1;
+        display: flex;
+        column-gap: var(--spacing-650);
+    }
+
+    &__nav-button-prev {
+        transform: rotate(90deg);
+
+        svg {
+            width: 14px;
+            height: 7px;
+        }
+    }
+
+    &__nav-button-next {
+        transform: rotate(-90deg);
+
+        svg {
+            width: 14px;
+            height: 7px;
+        }
+    }
+}

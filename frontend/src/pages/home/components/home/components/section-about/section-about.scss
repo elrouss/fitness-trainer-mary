@@ -1,0 +1,44 @@
+.section-about {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-600);
+    }
+
+    &__slider {
+        max-width: 680px;
+        height: 472px;
+        border-radius: var(--radius-500);
+    }
+
+    &__imgs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__img {
+        width: calc(50% - var(--spacing-700));
+        height: 582px;
+
+        img {
+            border-radius: var(--radius-500);
+        }
+    }
+
+    &__facts-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-600);
+    }
+
+    &__facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--spacing-600);
+        height: 37.29%;
+    }
+
+    &__text-card-fact {
+        flex-grow: 1;
+    }
+}

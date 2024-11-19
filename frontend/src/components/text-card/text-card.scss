@@ -1,0 +1,17 @@
+.text-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-400);
+    border-radius: var(--radius-500);
+    text-transform: uppercase;
+    background-color: var(--color-secondary-bg-600);
+    color: var(--color-primary-bg-100);
+
+    &__description {
+        margin-top: auto;
+
+        &_accent {
+            color: var(--color-secondary-bg-300);
+        }
+    }
+}
