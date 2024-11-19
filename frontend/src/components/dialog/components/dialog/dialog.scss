@@ -3,6 +3,7 @@
 .dialog {
     @include transition(('opacity', 'visibility'));
 
+    position: fixed;
     display: block;
     overflow: visible;
     padding: 0;

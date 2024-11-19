@@ -1,0 +1,96 @@
+@use 'styles/mixins' as *;
+
+.footer {
+    &__wrapper {
+        display: grid;
+        grid:
+            'logo . address address address . img' auto
+            '. . . . . . .' var(--spacing-500)
+            'copyright . privacy-policy . user-agreement . authors' auto
+            / 17% auto max-content var(--spacing-650) max-content auto 17%;
+        max-width: var(--container-main);
+        padding: var(--spacing-400) 0;
+        margin: 0 auto;
+        text-transform: uppercase;
+        color: var(--color-secondary-bg-300);
+    }
+
+    &__logo {
+        grid-area: logo;
+
+        &#{&} {
+            width: 115px;
+            height: 54px;
+        }
+    }
+
+    &__copyright {
+        grid-area: copyright;
+    }
+
+    &__address {
+        display: inline-flex;
+        grid-area: address;
+        column-gap: var(--spacing-650);
+        max-width: 312px;
+
+        &#{&} {
+            line-height: 16.8px;
+            color: var(--color-secondary-bg-600);
+        }
+    }
+
+    &__address-title {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    &__icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__icon {
+        width: 16px;
+        height: 20px;
+    }
+
+    &__link {
+        @include transition('color');
+
+        @include hover {
+            color: var(--color-secondary-bg-600);
+        }
+    
+        @include active {
+            color: var(--color-secondary-bg-600);
+        }
+    }
+
+    &__privacy-policy {
+        grid-area: privacy-policy;
+    }
+
+    &__user-agreement {
+        grid-area: user-agreement;
+    }
+
+    &__img-wrapper {
+        grid-area: img;
+        justify-self: center;
+    }
+
+    &__img {
+        &#{&} {
+            width: 192px;
+            height: 147px;
+        }
+    }
+
+    &__authors {
+        grid-area: authors;
+    }
+}

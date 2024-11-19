@@ -1,0 +1,31 @@
+mixin footer(props = {})
+    footer.footer
+        .footer__wrapper.t2
+            +logo.footer__logo
+
+            p.footer__copyright
+                time(datetime=2024) 2024
+                |
+                | &copy; Все права защищены
+
+            +link({ href: 'https://spb.afitness.ru/devyatkino/' }).footer__address
+                span.footer__icon-wrapper
+                    +icon('location').footer__icon
+
+                address
+                    span.footer__address-title A-Fitness
+
+                    | , Ленинградская&nbsp;обл., г.&nbsp;Мурино, ул.&nbsp;Шувалова, д.&nbsp;6
+
+            +link({ hasUnderline: true }).footer__link.footer__privacy-policy
+                | Политика конфиденциальности
+
+            +link({ hasUnderline: true }).footer__link.footer__user-agreement
+                | Пользовательское соглашение
+
+            +img({ img: 'footer__img', src: './assets/images/lemon-relax-light.png', alt: 'Лимон со скрещенными ногами' }).footer__img-wrapper
+
+            p.footer__authors Сайт разработан
+                |
+                +link({ hasUnderline: true }).footer__link
+                    | Ссылка
