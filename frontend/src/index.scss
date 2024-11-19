@@ -11,6 +11,7 @@
 
 // MODULES
 @use 'modules/activity-dialog/index' as activity-dialog;
+@use 'modules/slider/index' as slider;
 
 // COMPONENTS
 @use 'components/accordion/index' as accordion;
@@ -18,13 +19,15 @@
 @use 'components/benefit-card-img/index' as benefit-card-img;
 @use 'components/benefit-card-text/index' as benefit-card-text;
 @use 'components/dialog/index' as dialog;
-@use 'components/empty-list/index.scss' as empty-list;
+@use 'components/empty-list/index' as empty-list;
+@use 'components/fact-card/index' as fact-card;
 @use 'components/flip-card-primary/index' as flip-card-primary;
 @use 'components/flip-card-secondary/index' as flip-card-secondary;
 @use 'components/footer/index' as footer;
 @use 'components/header/index' as header;
 @use 'components/more-info-card/index' as more-info-card;
 @use 'components/section/index' as section;
+@use 'components/text-card/index' as text-card;
 
 // UI
 @use 'ui/button/button';

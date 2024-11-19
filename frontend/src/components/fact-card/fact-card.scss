@@ -1,0 +1,17 @@
+.fact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--spacing-600);
+    background-color: var(--color-primary-bg-100);
+
+    &__title {
+        color: var(--color-secondary-bg-600);
+    }
+
+    &__subtitle {
+        max-width: 131px;
+        color: var(--color-primary-bg-200);
+    }
+}

@@ -1,0 +1,7 @@
+mixin fact-card(props = {})
+    template.fact-card-template
+        article.fact-card&attributes(attributes)
+            .article__wrapper
+                #{props.tag || 'h3'}.fact-card__title.h1-m
+
+                p.fact-card__subtitle.t2

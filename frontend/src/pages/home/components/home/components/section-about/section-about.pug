@@ -1,0 +1,13 @@
+mixin section-about(props = {})
+    +section({ classNames: { wrapper: 'section-about__wrapper' }, theme: 'light' })#about.section-about
+        +slider.section-about__slider
+
+        .section-about__imgs
+            +img.section-about__img.section-about__img_left
+
+            +img.section-about__img.section-about__img_right
+
+        .section-about__facts-wrapper
+            .section-about__facts
+
+            //- +text-card.section-about__text-card-fact

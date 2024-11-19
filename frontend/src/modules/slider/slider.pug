@@ -1,0 +1,8 @@
+mixin slider(props = {})
+    .swiper.swiper-container.slider&attributes(attributes)
+        ul.swiper-wrapper.slider__wrapper
+
+        .slider__nav-buttons
+            +icon-button({ tag: 'button', size: 'l', theme: 'transparent', icon: 'arrow-down-bold' }).swiper-button-prev.slider__nav-button-prev
+
+            +icon-button({ tag: 'button', size: 'l', theme: 'transparent', icon: 'arrow-down-bold' }).swiper-button-next.slider__nav-button-next
