@@ -41,6 +41,10 @@ ol {
   list-style-type: none;
 }
 
+address {
+  font-style: normal
+}
+
 body {
     @include custom-scroll;
 
