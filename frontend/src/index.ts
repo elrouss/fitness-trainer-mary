@@ -16,5 +16,6 @@ import './pages/home/components/home/components/section-activities/section-activ
 
 // COMPONENTS
 import './components/accordion/index';
+import './components/header/index';
 
 // UI

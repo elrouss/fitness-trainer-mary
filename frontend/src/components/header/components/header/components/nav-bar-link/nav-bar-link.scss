@@ -13,4 +13,8 @@
 
     padding: 0 var(--spacing-750);
     color: var(--color-secondary-bg-375);
+
+    &_active {
+        color: var(--color-secondary-bg-600);
+    }
 }
