@@ -1,0 +1,56 @@
+.slider2 {
+    $this: &;
+
+    &__wrapper {
+        & > li {
+            width: 644px !important;
+            height: 400px;
+            border-radius: var(--radius-500);
+
+            &:nth-child(odd) {
+                background-color: var(--color-secondary-bg-600);
+
+                #{$this}-slide {
+                    &__content {
+                        color: var(--color-secondary-bg-100);
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                background-color: var(--color-secondary-bg-150);
+
+                #{$this}-slide {
+                    &__content {
+                        color: var(--color-secondary-bg-600);
+                    }
+                }
+            }
+        }
+    }
+
+    &__nav-buttons {
+        display: flex;
+        column-gap: var(--spacing-650);
+        justify-content: center;
+        margin-top: var(--spacing-600);
+    }
+
+    &__nav-button-prev {
+        transform: rotate(90deg);
+
+        svg {
+            width: 15px;
+            height: 9px;
+        }
+    }
+
+    &__nav-button-next {
+        transform: rotate(-90deg);
+
+        svg {
+            width: 15px;
+            height: 9px;
+        }
+    }
+}

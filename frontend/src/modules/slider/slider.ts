@@ -14,7 +14,7 @@ export class Slider {
 
     constructor (data?: TSlides) {
         this.root = document.querySelector('.slider') as HTMLDivElement;
-        this.slidesWrapper = this.root.querySelector('.swiper-wrapper') as HTMLUListElement;
+        this.slidesWrapper = this.root.querySelector('.slider__wrapper') as HTMLUListElement;
 
         this.data = data;
 

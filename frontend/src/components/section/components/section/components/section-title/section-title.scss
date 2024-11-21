@@ -34,6 +34,21 @@
                     url("./assets/images/signature-benefits.png");
             }
         }
+
+        &_results {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: 193px;
+                bottom: -22px;
+                width: 322px;
+                height: 100px;
+                background: center / cover no-repeat
+                    url("./assets/images/signature-results.png");
+            }
+        }
     }
 
     &__accent-word {

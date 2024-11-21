@@ -1,0 +1,21 @@
+.slider2-slide {
+    display: flex;
+    height: 100%;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--spacing-500);
+    }
+
+    &__img-wrapper {
+        flex-shrink: 0;
+        width: 51.55%;
+    }
+
+    &__img {
+        border-top-left-radius: var(--radius-500);
+        border-bottom-left-radius: var(--radius-500);
+    }
+}
