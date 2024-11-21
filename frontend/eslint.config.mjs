@@ -40,7 +40,6 @@ export default [
                     ignoreChainWithDepth: 2
                 }
             ],
-            '@stylistic/no-extra-parens': 'error',
             '@stylistic/no-extra-semi': 'error',
             '@stylistic/no-floating-decimal': 'error',
             '@stylistic/no-mixed-operators': 'error',
