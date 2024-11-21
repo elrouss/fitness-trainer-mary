@@ -1,0 +1,28 @@
+.section-reviews {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__reviews-list {
+        margin: var(--spacing-300) auto 0;
+    }
+
+    &__deco-element {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        width: 544px;
+        height: 625px;
+        background: center / cover no-repeat url("./assets/images/dumbbell.png");
+
+        &_before {
+            left: 25%;
+            transform: rotate(-18deg) translate(-50%, -50%);
+        }
+
+        &_after {
+            right: 16%;
+            transform: rotate(-18deg) translate(50%, -50%);
+        }
+    }
+}

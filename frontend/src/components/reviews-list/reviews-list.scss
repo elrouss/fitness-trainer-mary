@@ -1,0 +1,12 @@
+.reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-675) var(--spacing-600);
+    max-width: 502px;
+
+    &__list-item-sizer {
+        width: calc(50% - var(--spacing-700));
+        opacity: 0;
+        visibility: hidden;
+    }
+}

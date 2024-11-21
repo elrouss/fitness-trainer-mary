@@ -1,5 +1,6 @@
 import './index.scss';
 
+import 'masonry-layout';
 import 'swiper/css';
 
 // SERVICES
@@ -11,6 +12,7 @@ import './pages/home/components/home/components/section-workout/section-workout'
 import './pages/home/components/home/components/section-benefits/section-benefits';
 import './pages/home/components/home/components/section-results/section-results';
 import './pages/home/components/home/components/section-activities/section-activities';
+import './pages/home/components/home/components/section-reviews/section-reviews';
 
 // MODULES
 

@@ -1,0 +1,15 @@
+.reviews-list-item {
+    width: calc(50% - var(--spacing-700));
+    height: fit-content;
+    border: 1px solid var(--color-secondary-bg-600);
+    border-radius: var(--radius-500);
+
+    &:not(:last-child) {
+        margin-bottom: var(--spacing-675);
+    }
+
+    img {
+        border-radius: var(--radius-500);
+        filter: grayscale(100%);
+    }
+}
