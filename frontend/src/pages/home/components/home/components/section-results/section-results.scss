@@ -1,0 +1,15 @@
+.section-results {
+    &__wrapper {
+        &#{&} {
+            max-width: none;
+
+            // TODO: временно до адаптива
+            margin-right: 0;
+            margin-left: 32px;
+        }
+    }
+
+    &__slider {
+        margin-top: var(--spacing-300);
+    }
+}

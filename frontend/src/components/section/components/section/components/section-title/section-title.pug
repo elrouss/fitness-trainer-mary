@@ -1,23 +1,40 @@
 mixin section-title(props = {})
+    -
+        const { endText } = props.title;
+        let endTextClass;
+
+        switch (endText) {
+            case 'преимущества':
+                endTextClass = 'section-title_signature_benefits';
+                break;
+
+            case 'результаты':
+                endTextClass = 'section-title_signature_results';
+                break;
+
+            default:
+                endTextClass = '';
+        }
+
     //- TODO: вынести в миксин базовый тег
-    if props.title.startText && props.title.middleText && props.title.endText
+    if props.title.startText && props.title.middleText && endText
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
             class!=`section-title_align_${props.title.align || 'left'}`,
-            class!=`${props.title.endText === 'преимущества' ? 'section-title_signature_benefits' : ''}`
+            class!=endTextClass
         )
             span!= props.title.startText
 
             span.section-title__accent-word!= props.title.middleText
 
-    else if props.title.startText && props.title.endText
+    else if props.title.startText && endText
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
             class!=`section-title_align_${props.title.align || 'left'}`
         )
             span!= props.title.startText
 
-            span.section-title__accent-word!= props.title.endText
+            span.section-title__accent-word!= endText
     else
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
