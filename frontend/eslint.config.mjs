@@ -83,7 +83,6 @@ export default [
             '@stylistic/wrap-regex': 'error',
 
             'accessor-pairs': 'error',
-            'array-callback-return': 'error',
             'arrow-body-style': ['error', 'as-needed'],
             camelcase: 'error',
             'consistent-return': 'error',

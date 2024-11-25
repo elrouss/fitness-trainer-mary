@@ -1,0 +1,12 @@
+.section-diplomas {
+    &__title {
+        &#{&} {
+            max-width: 343px;
+        }
+    }
+
+    &__folder {
+        max-width: 1176px;
+        margin: var(--spacing-300) auto 0;
+    }
+}
