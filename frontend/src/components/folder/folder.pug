@@ -1,0 +1,21 @@
+mixin folder(props = {})
+    .folder&attributes(attributes)
+        ul.folder__tabs-list(role="tablist")
+            if props.tabs
+                each tab in props.tabs
+                    li.folder__tabs-list-item(role="tab")
+                        +folder-tab({ label: tab.label, dataLabel: tab.dataLabel, checked: tab.checked })
+
+        ul.folder__panel-list(role="tabpanel")
+            if props.tabs
+                each tab in props.tabs
+                    - let imgsNum = tab.imgsNum;
+
+                    li.folder__panel-list-item(
+                        class=tab.checked ? "" : "hidden",
+                        data-label=tab.dataLabel
+                    )
+                        while imgsNum > 0
+                            +img.folder__img-wrapper
+
+                            - imgsNum--;

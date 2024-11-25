@@ -1,0 +1,44 @@
+@use 'styles/mixins' as *;
+
+.folder {
+    &__tabs-list {
+        display: flex;
+        column-gap: var(--spacing-600);
+    }
+
+    &__tabs-list-item {
+        min-width: 18.37%;
+    }
+
+    &__panel-list {
+        padding: var(--spacing-200) var(--spacing-300);
+        border-top-right-radius: var(--radius-500);
+        border-bottom-right-radius: var(--radius-500);
+        border-bottom-left-radius: var(--radius-500);
+        background-color: var(--color-secondary-bg-600);
+    }
+
+    &__panel-list-item {
+        @include starting-style {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @include transition(('opacity', 'visibility'), 0.7s);
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        column-gap: var(--spacing-600);
+        transition-behavior: allow-discrete;
+    }
+
+    &__img-wrapper {
+        height: 365px;
+        border: 2px solid var(--color-primary-main-100);
+        border-radius: var(--radius-300);
+
+        .img__img {
+            border-radius: var(--radius-300);
+        }
+    }
+}

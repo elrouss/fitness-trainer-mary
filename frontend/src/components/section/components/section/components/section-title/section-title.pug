@@ -29,6 +29,7 @@ mixin section-title(props = {})
 
     else if props.title.startText && endText
         #{props.title.tag || 'h2'}.section-title.h2(
+            class!=props.title.className,
             class!=`section-title_theme_${props.theme}`,
             class!=`section-title_align_${props.title.align || 'left'}`
         )

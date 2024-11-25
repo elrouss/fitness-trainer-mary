@@ -1,0 +1,10 @@
+mixin folder-tab(props = {})
+    label.folder-tab.h4&attributes(attributes)
+        input.folder-tab__input(
+            type="radio",
+            name="folder",
+            data-label=props.dataLabel,
+            checked=props.checked
+        )
+
+        span.folder-tab__label!= props.label

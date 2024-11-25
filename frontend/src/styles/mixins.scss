@@ -93,3 +93,9 @@
         background-color: var(--color-primary-main-100);
     }
 }
+
+@mixin starting-style {
+    @starting-style {
+        @content;
+    }
+}
