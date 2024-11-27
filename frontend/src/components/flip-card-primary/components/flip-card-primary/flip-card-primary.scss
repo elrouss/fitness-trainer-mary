@@ -31,11 +31,6 @@
                 opacity: 0.66;
             }
 
-            #{$this}__services-list {
-                color: var(--color-white);
-                opacity: 0.66;
-            }
-
             #{$this}__price-list {
                 color: var(--color-secondary-bg-600);
             }
@@ -51,10 +46,6 @@
 
             #{$this}__title-back {
                 color: var(--color-secondary-bg-300);
-            }
-
-            #{$this}__services-list {
-                color: var(--color-primary-accent-100);
             }
 
             #{$this}__price-list {
@@ -149,10 +140,6 @@
     &__icon {
         grid-area: icon;
         justify-self: flex-end;
-    }
-
-    &__price-list {
-        margin-top: var(--spacing-400);
     }
 
     &__price-list-item {

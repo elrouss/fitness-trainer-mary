@@ -8,12 +8,12 @@ export const MOCK_WORKOUT: IFlipCard[] = [
     {
         type: 'secondary',
         theme: 'calm',
-        title: 'Онлайн сопровождение',
-        details: 'Уровень подготовки любой',
+        title: 'Онлайн-сопровождение',
+        details: 'Из любой точки мира',
         img: imgMary3,
         services: [
             {
-                title: 'Онлайн сопровождение',
+                title: 'Онлайн-сопровождение',
                 price: 10000
             }
         ],
@@ -22,7 +22,11 @@ export const MOCK_WORKOUT: IFlipCard[] = [
     {
         type: 'primary',
         theme: 'brand',
-        title: 'Сплит тренировки\n(2 человека)',
+        title: 'Сплит-тренировки (2\u00a0человека) в\u00a0',
+        link: {
+            text: 'A-FITNESS',
+            href: 'https://spb.afitness.ru/devyatkino/'
+        },
         img: imgMary2,
         services: [
             {
@@ -40,7 +44,11 @@ export const MOCK_WORKOUT: IFlipCard[] = [
     {
         type: 'primary',
         theme: 'calm',
-        title: 'Персональные тренировки\n(в зале)',
+        title: 'Персональные тренировки в\u00a0',
+        link: {
+            text: 'A-FITNESS',
+            href: 'https://spb.afitness.ru/devyatkino/'
+        },
         img: imgMary1,
         services: [
             {

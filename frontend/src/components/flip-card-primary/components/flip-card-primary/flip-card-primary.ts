@@ -17,6 +17,7 @@ export class FlipCardPrimary extends InitComponent {
     render = ({
         theme,
         title,
+        link,
         img,
         services,
         icon
@@ -33,21 +34,29 @@ export class FlipCardPrimary extends InitComponent {
 
             const frontSide = card.querySelector('.flip-card-primary__front') as HTMLDivElement;
             const frontSideTitle = frontSide.querySelector('.flip-card-primary__title') as HTMLHeadingElement;
+            const frontSideTitleText = frontSideTitle.querySelector('.flip-card-primary__title-text') as HTMLSpanElement;
+            const frontSideLink = frontSideTitle.querySelector('.flip-card-primary__title-link') as HTMLAnchorElement;
             const frontSideImg = frontSide.querySelector('.flip-card-primary__img')?.querySelector('img') as HTMLImageElement;
             const frontSideServices = frontSide.querySelector('.flip-card-primary__services-list') as HTMLUListElement;
 
             const backSide = card.querySelector('.flip-card-primary__back') as HTMLDivElement;
             const backSideTitle = backSide.querySelector('.flip-card-primary__title-back') as HTMLHeadingElement;
+            const backSideTitleText = backSideTitle.querySelector('.flip-card-primary__title-back-text') as HTMLSpanElement;
+            const backSideLink = backSideTitle.querySelector('.flip-card-primary__title-back-link') as HTMLAnchorElement;
             const backSideServices = backSide.querySelector('.flip-card-primary__price-list') as HTMLUListElement;
 
             card.classList.add(`flip-card-primary_theme_${theme}`);
 
-            frontSideTitle.textContent = title;
+            frontSideTitleText.textContent = title;
+            frontSideLink.textContent = link!.text;
+            frontSideLink.href = link!.href;
             frontSideImg.src = img;
             frontSideImg.alt = title;
             frontSideServices.append(this.renderFrontSideServices(services));
 
-            backSideTitle.textContent = title;
+            backSideTitleText.textContent = title;
+            backSideLink.textContent = link!.text;
+            backSideLink.href = link!.href;
             backSideServices.append(this.renderBackSideServices(services, theme));
 
             this.hideIcon(frontSide, icon);
