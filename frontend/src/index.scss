@@ -11,6 +11,7 @@
 
 // MODULES
 @use 'modules/activity-dialog/index' as activity-dialog;
+@use 'modules/feedback-form/index' as feedback-form;
 @use 'modules/slider/index' as slider;
 
 // COMPONENTS
@@ -42,6 +43,7 @@
 @use 'ui/input/input';
 @use 'ui/link//link';
 @use 'ui/link-button/link-button';
+@use 'ui/multiselect/index' as multiselect;
 @use 'ui/outline-button/outline-button';
 @use 'ui/spinner/spinner';
 @use 'ui/tab/tab';

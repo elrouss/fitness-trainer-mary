@@ -29,7 +29,7 @@
         }
 
         width: 100%;
-        padding: var(--spacing-550) 59px var(--spacing-550) var(--spacing-550);
+        padding: calc(var(--spacing-550) - 2px) 59px calc(var(--spacing-550) - 2px) var(--spacing-550);
         border: 1px solid var(--color-secondary-bg-500);
         border-radius: var(--radius-500);
         text-overflow: ellipsis;

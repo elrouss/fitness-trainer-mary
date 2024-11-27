@@ -1,0 +1,18 @@
+.multiselect-tab {
+    display: inline-flex;
+    flex-shrink: 0;
+    column-gap: var(--spacing-700);
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px var(--spacing-675);
+    border: 1px solid var(--color-secondary-bg-500);
+    border-radius: var(--radius-500);
+    background-color: var(--color-primary-main-100);
+    color: var(--color-secondary-bg-600);
+    cursor: default;
+    user-select: text;
+
+    &__label {
+        cursor: text;
+    }
+}

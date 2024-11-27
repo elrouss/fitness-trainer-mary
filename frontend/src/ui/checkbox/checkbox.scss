@@ -79,5 +79,13 @@
 
     &__label {
         color: var(--color-primary-accent-100);
+
+        &_required {
+            &::after {
+                content: '*';
+                margin-left: var(--spacing-750);
+                color: var(--color-status-danger);
+            }
+        }
     }
 }

@@ -1,7 +1,14 @@
 mixin button(props = {})
-    button.button&attributes(attributes)(
+    -
+        const isButton = !props.href;
+        const tag = isButton ? 'button' : 'a';
+
+    #{tag}.button&attributes(attributes)(
         class=`button_theme_${props.theme || 'default'}`,
-        type=props.type || "button"
+        type=isButton ? props.type || "button" : undefined,
+        href=props.href
     )
-        +spinner('spinner').button__spinner
+        if isButton
+            +spinner('spinner').button__spinner
+
         span.h4.button__text= props.text

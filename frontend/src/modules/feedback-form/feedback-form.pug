@@ -1,0 +1,37 @@
+mixin feedback-form(props = {})
+    .feedback-form&attributes(attributes)
+        .feedback-form__photo-cover
+            +img({ img: 'feedback-form__img' }).feedback-form__img-wrapper
+
+            p.feedback-form__photo-cover-title.h2-l Всего один шаг до&nbsp;нашей первой тренировки
+
+        form.feedback-form__form
+            h3.h4 О&nbsp;вас
+
+            .feedback-form__inputs
+                +input({ id: 'feedback-form-name', label: 'Имя, фамилия', placeholder: 'Введите имя', required: true })
+
+                +input({ id: 'feedback-form-phone', label: 'Телефон', placeholder: 'Введите номер', required: true })
+
+                +multiselect({ label: 'Вид тренировки', placeholder: 'Выберите вид' })
+
+            .feedback-form__communication-format
+                h3.h4 Удобный формат для обратной связи
+
+                .feedback-form__communication-format-checkboxes
+                    +checkbox2({ label: 'Telegram', icon: 'telegram' })
+
+                    +checkbox2({ label: 'WhatsApp', icon: 'whatsapp' })
+
+                +checkbox({ labelPosition: 'right', required: true }).feedback-form__consent-checkbox
+                    | Я&nbsp;ознакомлен(-а) с&nbsp;
+                    +link({ hasUnderline: true })
+                        | политикой конфиденциальности
+
+                    |
+                    | и&nbsp;согласен(-на) с&nbsp;
+
+                    +link({ hasUnderline: true })
+                        | обработкой персональных данных
+
+            +button({ type: 'submit', text: 'Отправить' }).feedback-form__submit-button
