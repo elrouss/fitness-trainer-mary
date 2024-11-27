@@ -1,0 +1,6 @@
+mixin multiselect-tab(props = {})
+    template.multiselect-tab-template
+        span.multiselect-tab
+            span.multiselect-tab__label
+
+            +icon-button({ tag: 'button', icon: 'cross', size: 'xs', ariaLabel: 'Удалить опцию' }).multiselect-tab__button

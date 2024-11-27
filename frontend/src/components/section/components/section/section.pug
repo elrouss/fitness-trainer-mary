@@ -7,4 +7,7 @@ mixin section(props = {})
             if props.title
                 +section-title({ title: props.title, theme })
 
+            if props.subtitle
+                p.section__subtitle.h4!= props.subtitle
+
             block

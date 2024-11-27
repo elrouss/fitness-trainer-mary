@@ -60,3 +60,13 @@ body {
 .hidden {
   display: none !important;
 }
+
+.visually-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.visually-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

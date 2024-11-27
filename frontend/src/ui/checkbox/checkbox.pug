@@ -12,5 +12,5 @@ mixin checkbox(props = {})
             +icon('checkmark').checkbox__icon
 
         if props.labelPosition == 'right'
-            span.checkbox__label
+            span.checkbox__label(class=props.required && "checkbox__label_required")
                 block

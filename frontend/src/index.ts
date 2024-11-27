@@ -16,9 +16,11 @@ import './pages/home/components/home/components/section-reviews/section-reviews'
 import './pages/home/components/home/components/section-diplomas/section-diplomas';
 
 // MODULES
+import './modules/feedback-form/feedback-form';
 
 // COMPONENTS
 import './components/accordion/index';
 import './components/header/index';
 
 // UI
+import './ui/multiselect/multiselect';
