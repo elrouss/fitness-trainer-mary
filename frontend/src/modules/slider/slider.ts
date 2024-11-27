@@ -25,6 +25,7 @@ export class Slider {
         new Swiper('.slider', {
             spaceBetween: 16,
             loop: true,
+            cssMode: true,
             modules: [Autoplay, Navigation],
             autoplay: {
                 delay: 2500

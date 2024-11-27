@@ -6,6 +6,9 @@ mixin flip-card-primary(props = {})
                     +img.flip-card-primary__img
 
                     h3.h3.flip-card-primary__title
+                        span.flip-card-primary__title-text
+
+                        +link({ hasUnderline: true }).flip-card-primary__title-link
 
                     ul.flip-card-primary__services-list
 
@@ -15,5 +18,8 @@ mixin flip-card-primary(props = {})
 
                 .flip-card-primary__back
                     h3.h3.flip-card-primary__title-back
+                        span.flip-card-primary__title-back-text
+
+                        +link({ hasUnderline: true }).flip-card-primary__title-back-link
 
                     ul.flip-card-primary__price-list
