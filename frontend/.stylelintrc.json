@@ -6,7 +6,6 @@
         "stylelint-order"
     ],
 	"ignoreFiles": [
-		"src/styles/functions.scss",
 		"dist/**/*",
 		"config/**/*",
 		"node_modules/**/*"

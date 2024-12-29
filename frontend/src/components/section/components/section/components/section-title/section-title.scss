@@ -1,3 +1,6 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .section-title {
     &_theme {
         &_light {
@@ -22,11 +25,37 @@
     &_signature {
         &_benefits {
             position: relative;
+            width: fit-content;
+
+            &#{&} {
+                @include media($lg) {
+                    &::before {
+                        right: -154px;
+                        bottom: -30px;
+                    }
+                }
+
+                @include media($md) {
+                    &::before {
+                        right: -53px;
+                        bottom: -9px;
+                        width: 262px;
+                        height: 78px;
+                    }
+                }
+
+                @include media($xs) {
+                    &::before {
+                        right: -11px;
+                        bottom: -20px;
+                    }
+                }
+            }
 
             &::before {
                 content: "";
                 position: absolute;
-                right: -25px;
+                right: -95px;
                 bottom: -17px;
                 width: 432px;
                 height: 118px;
@@ -37,12 +66,38 @@
 
         &_results {
             position: relative;
+            width: fit-content;
+            &#{&} {
+                @include media($lg) {
+                    &::before {
+                        right: -190px;
+                        bottom: -32px;
+                    }
+                }
+
+                @include media($md) {
+                    &::before {
+                        right: -164px;
+                        bottom: -11px;
+                        width: 266px;
+                        height: 53px;
+                        background-image: url("./assets/images/signature-results-mobile.png");
+                    }
+                }
+
+                @include media($xs) {
+                    &::before {
+                        right: -153px;
+                        bottom: -20px;
+                    }
+                }
+            }
 
             &::before {
                 content: "";
                 position: absolute;
-                right: 193px;
-                bottom: -22px;
+                right: -131px;
+                bottom: -26px;
                 width: 322px;
                 height: 100px;
                 background: center / cover no-repeat

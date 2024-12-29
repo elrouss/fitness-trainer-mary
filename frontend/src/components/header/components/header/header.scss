@@ -1,4 +1,9 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .header {
+    $this: &;
+
     position: fixed;
     top: 0;
     left: 50%;
@@ -8,39 +13,130 @@
     transform: translateX(-50%);
 
     &__wrapper {
+        @include media($xxxl) {
+            margin: var(--spacing-700) clamp(1rem, 0.629rem + 1.524vw, 2rem);
+        }
+
+        @include media($xl) {
+            width: auto;
+        }
+
+        @include media($md) {
+            column-gap: var(--spacing-650);
+        }
+
         display: flex;
-        justify-content: space-between;
+        column-gap: var(--spacing-600);
         width: calc(100% - var(--spacing-400) * 2);
+        max-width: var(--container-main);
         margin: var(--spacing-700) auto;
+
+        &_desktop {
+            @include media($lg) {
+                display: none;
+            }
+        }
+
+        &_tablet {
+            @include media($lg) {
+                position: relative;
+                z-index: 1;
+                display: flex;
+            }
+
+            display: none;
+
+            & > #{$this}__backdrop {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
     }
 
     &__backdrop {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: var(--spacing-750) var(--spacing-550);
+        padding: var(--spacing-750) clamp(12px, 2.864px + 1.19vw, 20px);
         border-radius: var(--radius-500);
         background-color: var(--color-secondary-bg-100);
 
-        &_logo {
-            width: 100%;
+        &_main {
+            @include media($lg) {
+                display: flex;
+                column-gap: var(--spacing-650);
+                align-items: center;
+            }
+
+            display: none;
         }
 
         &_nav-bar {
-            width: 55.45%;
+            width: 100%;
+            color: var(--color-secondary-bg-375);
         }
 
         &_buttons {
-            justify-content: space-between;
-            width: 26.6%;
+            @include media($xxxl) {
+                width: 70.6%;
+            }
+
+            @include media($lg) {
+                padding: 0;
+            }
+
+            @include media($md) {
+                column-gap: var(--spacing-700);
+                width: auto;
+
+                #{$this}__button {
+                    display: none;
+                }
+            }
+
+            column-gap: var(--spacing-650);
+            width: 46.67%;
         }
     }
 
     &__logo-link {
-        width: 15.7%;
+        @include media($lg) {
+            width: auto;
+        }
+
+        width: 26.37%;
+    }
+
+    &__logo {
+        &#{&} {
+            width: clamp(75px, 58px + 2.23vw, 90px);
+            height: clamp(35px, 27px + 1.04vw, 42px);
+        }
     }
 
     &__button {
-        width: 66.26%;
+        flex-grow: 1;
+    }
+
+    &__nav-bar {
+        @include media($lg) {
+            margin: var(--spacing-600) clamp(1rem, 0.629rem + 1.524vw, 2rem) 0;
+        }
+
+        @include media($md) {
+            margin-top: var(--spacing-700);
+        }
+
+        @include transition((opacity, visibility));
+
+        height: 0;
+
+        &::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            min-height: 150vh;
+            background-color: rgba(var(--color-black-rgb), 0.5);
+        }
     }
 }

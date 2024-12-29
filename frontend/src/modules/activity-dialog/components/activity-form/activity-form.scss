@@ -1,11 +1,34 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .activity-form {
+    &__back-button {
+        @include media($lg) {
+            position: absolute;
+            top: var(--spacing-400);
+            left: var(--spacing-400);
+        }
+    }
+
+    &__title {
+        @include line-clamp(3);
+    }
+
     &__subtitle {
+        @include media($lg) {
+            margin-top: 0;
+        }
+
         margin-top: var(--spacing-700);
         color: var(--color-primary-accent-100);
     }
 
     &__inputs {
-        margin-top: var(--spacing-250);
+        @include media($lg) {
+            margin-top: 0;
+        }
+
+        margin-top: clamp(1rem, -0.114rem + 4.571vw, 4rem);
     }
 
     &__input {
@@ -15,7 +38,7 @@
     }
 
     &__checkbox {
-        margin-top: var(--spacing-350);
+        margin-top: clamp(1.5rem, 0.357rem + 2.381vw, 2.5rem);
     }
 
     &__submit-button {

@@ -1,3 +1,6 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .section-reviews {
     &__wrapper {
         position: relative;
@@ -8,11 +11,19 @@
     }
 
     &__deco-element {
+        @include media($xxxl) {
+            width: 28.925vw;
+        }
+
+        @include media($lg) {
+            display: none;
+        }
+
         position: absolute;
         top: 50%;
         z-index: 1;
         width: 544px;
-        height: 625px;
+        aspect-ratio: 0.8704 / 1;
         background: center / cover no-repeat url("./assets/images/dumbbell.png");
 
         &_before {

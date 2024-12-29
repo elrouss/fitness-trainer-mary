@@ -1,20 +1,84 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .activity-dialog {
+    &#{&} {
+        @include media($md) {
+            height: calc(100% - 5%);
+        }
+
+        @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
+            height: calc(100% - 5%);
+        }
+    }
+
     &__wrapper {
+        @include media($lg) {
+            @include hide-scrollbar;
+
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+
+        @include media($md) {
+            @include hide-scrollbar;
+
+            overflow-y: auto;
+        }
+
         display: flex;
-        justify-content: space-between;
-        max-width: 1056px;
+        column-gap: clamp(1.5rem, 0.269rem + 1.923vw, 2rem);
+
+        @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
+            @include hide-scrollbar;
+
+            overflow-y: auto;
+        }
     }
 
     &__img {
+        @include media($lg) {
+            width: 100%;
+            height: fit-content;
+            aspect-ratio: 1 / 0.75;
+        }
+
+        @include media($md) {
+            aspect-ratio: 1 / 1;
+        }
+
         flex-shrink: 0;
         width: 420px;
         height: 550px;
     }
 
     &__content {
+        @include media($lg) {
+            row-gap: 1.25rem;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        @include media($md) {
+            margin-top: clamp(1.5rem, 0.984rem + 2.116vw, 2rem);
+        }
+
         display: flex;
         flex-direction: column;
         width: 57.2%;
         color: var(--color-secondary-bg-100);
+    }
+
+    & > .dialog__wrapper {
+        @include media($md) {
+            height: 100%;
+        }
+
+        position: relative;
+
+        @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
+            height: 100%;
+        }
     }
 }

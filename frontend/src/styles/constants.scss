@@ -1,49 +1,53 @@
+@use "sass:map";
+
 :root {
     // Colors
     --color-white: #fff;
     --color-black: #000;
-    --color-primary-main-100: #F70;
-    --color-primary-main-200: #F85F00;
-    --color-primary-main-300: #FFCA9B;
+    --color-black-rgb: 0, 0, 0;
+    --color-primary-main-100: #f70;
+    --color-primary-main-200: #f85f00;
+    --color-primary-main-300: #ffca9b;
     --color-primary-bg-100: #181818;
-    --color-primary-bg-200: #EBEBEB;
+    --color-primary-bg-100-rgb: 24, 24, 24;
+    --color-primary-bg-200: #ebebeb;
     --color-primary-accent-100: #848484;
     --color-secondary-bg-100: #282828;
     --color-secondary-bg-150: #222;
-    --color-secondary-bg-200: #2C2B2B;
+    --color-secondary-bg-200: #2c2b2b;
     --color-secondary-bg-300: #838383;
-    --color-secondary-bg-350: #ABAAAA;
-    --color-secondary-bg-360: #D9D9D9;
+    --color-secondary-bg-350: #abaaaa;
+    --color-secondary-bg-360: #d9d9d9;
     --color-secondary-bg-360-rgb: 217, 217, 217;
-    --color-secondary-bg-375: #B2B2B2;
-    --color-secondary-bg-400: #152D3F;
-    --color-secondary-bg-500: #9FAEBC;
-    --color-secondary-bg-600: #FBFBFB;
-    --color-status-success: #1F9C46;
-    --color-status-danger: #D83333;
-    --color-status-danger-100: #FFDADA;
-    --color-status-warning: #F7AA22;
-    --color-status-info: #1D86EF;
+    --color-secondary-bg-375: #b2b2b2;
+    --color-secondary-bg-400: #152d3f;
+    --color-secondary-bg-500: #9faebc;
+    --color-secondary-bg-600: #fbfbfb;
+    --color-status-success: #1f9c46;
+    --color-status-danger: #d83333;
+    --color-status-danger-100: #ffdada;
+    --color-status-warning: #f7aa22;
+    --color-status-info: #1d86ef;
 
     // Containers
     --container-main: 1376px;
 
     // Spacing
-    --spacing-100: 128px;
-    --spacing-200: 80px;
+    --spacing-100: clamp(80px, 62.176px + 4.57vw, 128px);
+    --spacing-200: clamp(1rem, -0.486rem + 6.095vw, 5rem);
     --spacing-250: 64px;
-    --spacing-300: 48px;
+    --spacing-300: clamp(2rem, 1.629rem + 1.524vw, 3rem);
+    --spacing-325: clamp(1rem, -3.308rem + 6.73vw, 2.75rem);
     --spacing-350: 40px;
     --spacing-375: 36px;
-    --spacing-400: 32px;
-    --spacing-500: 24px;
+    --spacing-400: clamp(1.25rem, 0.971rem + 1.143vw, 2rem);
+    --spacing-500: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
     --spacing-550: 20px;
     --spacing-600: 16px;
     --spacing-650: 12px;
     --spacing-675: 10px;
     --spacing-700: 8px;
     --spacing-750: 6px;
-    --spacing-800: 4px;
 
     // Radius
     --radius-100: 50%;
@@ -57,3 +61,21 @@
     --transition-duration-basic: 0.3s;
     --transition-easing-func: ease;
 }
+
+// Adaptive
+$breakpoints: (
+    xxxl: 1439,
+    xxl: 1366,
+    xl: 1280,
+    lg: 1024,
+    md: 767,
+    xs: 390,
+    xxs: 320,
+);
+$xxxl: map.get($breakpoints, xxxl);
+$xxl: map.get($breakpoints, xxl);
+$xl: map.get($breakpoints, xl);
+$lg: map.get($breakpoints, lg);
+$md: map.get($breakpoints, md);
+$xs: map.get($breakpoints, xs);
+$xxs: map.get($breakpoints, xs);

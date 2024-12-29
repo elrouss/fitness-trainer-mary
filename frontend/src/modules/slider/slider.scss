@@ -9,8 +9,8 @@
 
     &__nav-buttons {
         position: absolute;
-        right: var(--spacing-375);
-        bottom: var(--spacing-375);
+        right: clamp(16px, 8.576px + 1.9vw, 36px);
+        bottom: clamp(16px, 8.576px + 1.9vw, 36px);
         z-index: 1;
         display: flex;
         column-gap: var(--spacing-650);

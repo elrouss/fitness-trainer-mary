@@ -5,17 +5,17 @@ mixin folder(props = {})
                 each tab in props.tabs
                     li.folder__tabs-list-item(role="tab")
                         +folder-tab({ label: tab.label, dataLabel: tab.dataLabel, checked: tab.checked })
+        .folder__wrapper-panel-list
+            ul.folder__panel-list(role="tabpanel")
+                if props.tabs
+                    each tab in props.tabs
+                        - let imgsNum = tab.imgsNum;
 
-        ul.folder__panel-list(role="tabpanel")
-            if props.tabs
-                each tab in props.tabs
-                    - let imgsNum = tab.imgsNum;
+                        li.folder__panel-list-item(
+                            class=tab.checked ? "" : "hidden",
+                            data-label=tab.dataLabel
+                        )
+                            //- while imgsNum > 0
+                            //-     +img.folder__img-wrapper
 
-                    li.folder__panel-list-item(
-                        class=tab.checked ? "" : "hidden",
-                        data-label=tab.dataLabel
-                    )
-                        while imgsNum > 0
-                            +img.folder__img-wrapper
-
-                            - imgsNum--;
+                            //-     - imgsNum--;

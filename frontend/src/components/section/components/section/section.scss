@@ -1,3 +1,6 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .section {
     &_theme {
         &_light {
@@ -10,6 +13,10 @@
     }
 
     &__wrapper {
+        @include media($xxxl) {
+            margin: 0 clamp(1rem, 0.629rem + 1.524vw, 2rem);
+        }
+
         max-width: var(--container-main);
         padding: var(--spacing-100) 0;
         margin: 0 auto;

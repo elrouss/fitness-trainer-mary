@@ -1,3 +1,4 @@
+@use "styles/constants" as *;
 @use "styles/mixins" as *;
 
 .activity-details {
@@ -14,13 +15,17 @@
     }
 
     &__info-list {
+        @include media($md) {
+            grid-template-columns: 1fr;
+        }
+
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-675) var(--spacing-600);
     }
 
     &__info-list-item-title {
-        margin-bottom: var(--spacing-600);
+        margin-bottom: clamp(0.25rem, -0.029rem + 1.143vw, 1rem);
         color: var(--color-primary-main-100);
     }
 }

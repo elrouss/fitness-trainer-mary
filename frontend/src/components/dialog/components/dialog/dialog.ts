@@ -1,17 +1,19 @@
 export class Dialog {
-    root: HTMLDialogElement | null;
+    root: HTMLDialogElement;
 
-    closeButton?: HTMLButtonElement | null;
+    closeButton: HTMLButtonElement;
 
-    constructor () {
-        this.root = document.querySelector('.dialog');
+    constructor (className: string) {
+        this.root = document.querySelector(`.${className}`) as HTMLDialogElement;
 
-        this.closeButton = this.root?.querySelector('.dialog__close-button');
+        this.closeButton = this.root.querySelector('.dialog__close-button') as HTMLButtonElement;
 
-        this.root?.addEventListener('close', this.setScrollBack);
-        this.root?.addEventListener('click', this.closeOnBackdrop);
+        this.close = this.close.bind(this);
 
-        this.closeButton?.addEventListener('click', this.close);
+        this.root.addEventListener('close', this.setScrollBack);
+        this.root.addEventListener('click', this.closeOnBackdrop);
+
+        this.closeButton.addEventListener('click', this.close);
     }
 
     private setScrollBack = () => {
@@ -26,16 +28,17 @@ export class Dialog {
             return;
         }
 
-        dialog.close();
+        this.close();
     };
 
     open () {
-        this.root?.showModal();
+        this.root.showModal();
+
         document.body.classList.add('scroll-lock');
     }
 
     close () {
-        this.root?.close();
+        this.root.close();
 
         // this.root?.removeEventListener('close', this.setScrollBack);
         // this.root?.removeEventListener('click', this.closeOnBackdrop);

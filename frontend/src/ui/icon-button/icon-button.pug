@@ -9,7 +9,7 @@ mixin icon-button(props = {})
 
     if isTagButton
         button.icon-button&attributes(attributes)(
-            class=`icon-button_theme_${props.theme || 'light'}`,
+            class=props.theme ? `icon-button_theme_${props.theme}` : undefined,
             class=`icon-button_size_${props.size || 's'}`,
             type="button",
             aria-label=props.ariaLabel
@@ -17,7 +17,7 @@ mixin icon-button(props = {})
             +ico(props.icon)
     else if isTagButtonSpan
         span.icon-button&attributes(attributes)(
-            class=`icon-button_theme_${props.theme || 'light'}`,
+            class=props.theme ? `icon-button_theme_${props.theme}` : undefined,
             class=`icon-button_size_${props.size || 's'}`,
             role="button",
             tabindex="0",
@@ -26,7 +26,7 @@ mixin icon-button(props = {})
             +ico(props.icon)
     else
         span.icon-button&attributes(attributes)(
-            class=`icon-button_theme_${props.theme || 'light'}`,
+            class=props.theme ? `icon-button_theme_${props.theme}` : undefined,
             class=`icon-button_size_${props.size || 's'}`,
             aria-label=props.ariaLabel
         )

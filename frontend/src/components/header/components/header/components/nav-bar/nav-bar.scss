@@ -1,6 +1,30 @@
+@use "styles/constants" as *;
+@use "styles/mixins" as *;
+
 .nav-bar {
     &__list {
+        @include media($lg) {
+            position: relative;
+            flex-direction: column;
+            row-gap: var(--spacing-550);
+            align-items: center;
+            padding: 4.3125rem 0;
+            border-radius: var(--radius-500);
+            text-transform: uppercase;
+            background: linear-gradient(
+                    0deg,
+                    var(--color-primary-bg-100),
+                    var(--color-primary-bg-100)
+                ),
+                linear-gradient(
+                    0deg,
+                    rgba(var(--color-black-rgb), 0.2),
+                    rgba(var(--color-black-rgb), 0.2)
+                );
+            color: var(--color-secondary-bg-600);
+        }
+
         display: flex;
-        column-gap: var(--spacing-400);
+        column-gap: var(--spacing-325);
     }
 }

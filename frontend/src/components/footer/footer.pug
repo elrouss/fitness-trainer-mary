@@ -1,6 +1,6 @@
 mixin footer(props = {})
     footer.footer
-        .footer__wrapper.t2
+        .footer__wrapper.t1
             +logo.footer__logo
 
             p.footer__copyright
@@ -27,5 +27,6 @@ mixin footer(props = {})
 
             p.footer__authors Сайт разработан
                 |
-                +link({ hasUnderline: true }).footer__link
-                    | Ссылка
+                |
+                +link({ href: 'https://elrouss.github.io/craft-digital/', target: '_blank', hasUnderline: true }).footer__link
+                    | CRAFT.DIGITAL

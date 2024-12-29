@@ -1,6 +1,26 @@
 mixin nav-bar(props = {})
-    nav.nav-bar
+    -
+        const links = [
+            {
+                label: 'Обо мне',
+                href: '#about'
+            },
+            {
+                label: 'Тренировки',
+                href: '#workout'
+            },
+            {
+                label: 'Результаты',
+                href: '#results'
+            },
+            {
+                label: 'Мероприятия',
+                href: '#activities'
+            }
+        ]
+
+    nav.nav-bar&attributes(attributes)
         ul.nav-bar__list
-            each link in props.links
+            each link in links
                 li
                     +nav-bar-link(link)

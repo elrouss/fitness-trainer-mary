@@ -1,8 +1,8 @@
 @use "sass:math";
 @use "sass:list";
 
-@mixin media($property, $deviceSize) {
-    @media screen and (#{$property}: #{$deviceSize}px) {
+@mixin media($device-size, $property: max-width) {
+    @media screen and (#{$property}: #{$device-size}px) {
         @content;
     }
 }
@@ -41,16 +41,12 @@
     }
 }
 
-@mixin rem($property, $fontSize, $rootFontSize: 16px) {
-    #{$property}: math.div($fontSize, $rootFontSize) * 1rem;
+@mixin rem($property, $font-size, $root-font-size: 16px) {
+    #{$property}: math.div($font-size, $root-font-size) * 1rem;
 }
 
-@mixin line-height($lineHeight, $fontSize) {
-    line-height: math.div($lineHeight, $fontSize) * 100%;
-}
-
-@mixin fluid-text($max: 48, $min: 16) {
-    font-size: clamp(#{$min}px, 3vw, #{$max}px);
+@mixin line-height($line-height, $font-size) {
+    line-height: math.div($line-height, $font-size) * 100%;
 }
 
 @mixin transition(
@@ -73,7 +69,7 @@
 
 @mixin line-clamp($num-lines: 2) {
     display: -webkit-box;
-    overflow-y: hidden;
+    overflow: hidden;
     -webkit-line-clamp: $num-lines;
     -webkit-box-orient: vertical;
 }
@@ -97,5 +93,15 @@
 @mixin starting-style {
     @starting-style {
         @content;
+    }
+}
+
+@mixin hide-scrollbar {
+    overflow: -moz-scrollbars-none; // older versions of Firefox
+    -ms-overflow-style: none;  // Internet Explorer 10+
+    scrollbar-width: none; // Chrome, Safari, Firefox
+
+    &::-webkit-scrollbar  {
+        display: none;  /* Safari and Chrome */
     }
 }

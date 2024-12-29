@@ -11,8 +11,8 @@
         color: var(--color-secondary-bg-600);
     }
 
-    padding: 0 var(--spacing-750);
-    color: var(--color-secondary-bg-375);
+    padding: 0;
+    color: inherit;
 
     &_active {
         color: var(--color-secondary-bg-600);

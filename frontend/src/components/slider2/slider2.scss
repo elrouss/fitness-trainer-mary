@@ -1,10 +1,21 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .slider2 {
     $this: &;
 
     &__wrapper {
+        display: grid !important;
+        grid-auto-flow: column !important;
+
         & > li {
+            @include media($md) {
+                width: clamp(357px, 312.64px + 11.38vw, 644px) !important;
+                height: auto;
+            }
+
             width: 644px !important;
-            height: 400px;
+            min-height: 400px;
             border-radius: var(--radius-500);
 
             &:nth-child(odd) {
@@ -30,6 +41,10 @@
     }
 
     &__nav-buttons {
+        @include media($md) {
+            justify-content: flex-end;
+        }
+
         display: flex;
         column-gap: var(--spacing-650);
         justify-content: center;

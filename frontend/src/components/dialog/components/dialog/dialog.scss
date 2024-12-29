@@ -1,16 +1,36 @@
+@use "styles/constants" as *;
 @use "styles/mixins" as *;
 
 .dialog {
+    @include media($lg) {
+        width: 91.7%;
+    }
+
+    @include media($md) {
+        border-radius: var(--radius-500);
+    }
+
     @include transition(('opacity', 'visibility'));
 
     position: fixed;
+    top: 50%;
+    left: 50%;
     display: block;
     overflow: visible;
+    width: 82%;
+    max-width: 1176px;
+    max-height: none;
     padding: 0;
     border: none;
-    border-radius: var(--spacing-550);
+    border-radius: var(--radius-300);
+    margin: 0;
     opacity: 0;
     visibility: hidden;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
+        border-radius: var(--radius-500);
+    }
 
     &[open] {
         opacity: 1;
@@ -18,20 +38,17 @@
     }
 
     &::backdrop {
-        background-color: var(--color-primary-bg-100);
-        opacity: 0.5;
+        background-color: rgba(var(--color-primary-bg-100-rgb), 0.5);
     }
 
     &__wrapper {
-        position: relative;
-        min-width: 1176px;
-        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing-400);
     }
 
     &__close-button {
-        position: absolute;
-        top: calc(-1 * var(--spacing-650));
-        right: 0;
-        transform: translateY(-100%);
+        margin-bottom: var(--spacing-650);
+        margin-left: auto;
     }
 }

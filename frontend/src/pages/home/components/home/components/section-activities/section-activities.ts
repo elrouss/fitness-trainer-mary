@@ -2,6 +2,7 @@ import { InitComponent } from 'services/init-component/init-component';
 
 import { ActivityCard } from 'components/activity-card/components/activity-card/activity-card';
 import { ActivityDialog } from 'modules/activity-dialog/activity-dialog';
+import { EmptyList } from 'components/empty-list/components/empty-list';
 
 import { MOCK_ACTIVITIES } from '../mock/activities';
 import { emptyListData } from './constants';
@@ -11,7 +12,6 @@ import type {
     TActivities
 } from './interfaces';
 import type { IActivityCard } from 'components/activity-card/interfaces';
-import { EmptyList } from 'components/empty-list/components/empty-list';
 
 const classNames = {
     root: 'section-activities'

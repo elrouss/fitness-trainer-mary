@@ -6,13 +6,16 @@ import TOUR1 from 'assets/images/tour-1.jpg';
 import TOUR2 from 'assets/images/tour-2.jpg';
 import TOUR3 from 'assets/images/tour-3.jpg';
 
+import { MOCK_DIPLOMAS } from './diplomas';
+
 import type { ISectionAbout } from '../section-about/interfaces';
 
 export const MOCK_ABOUT: ISectionAbout = {
     text1: {
         title: 'Обо мне',
         description: 'Мечтаю всем людям показать мир своими глазами и сделать спорт любимым делом, ',
-        accentDescription: 'а не вынужденным страданием'
+        accentDescription: 'а не вынужденным страданием',
+        portfolio: MOCK_DIPLOMAS.portfolio
     },
     text2: {
         description: 'Я заботливый фитнес-тренер, который плавно и бережно внедрит вам здоровый образ ',
