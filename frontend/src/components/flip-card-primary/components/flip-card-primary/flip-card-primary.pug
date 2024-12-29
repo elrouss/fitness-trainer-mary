@@ -5,16 +5,17 @@ mixin flip-card-primary(props = {})
                 .flip-card-primary__front
                     +img.flip-card-primary__img
 
-                    h3.h3.flip-card-primary__title
-                        span.flip-card-primary__title-text
+                    .flip-card-primary__header
+                        h3.h3.flip-card-primary__title
+                            span.flip-card-primary__title-text
 
-                        +link({ hasUnderline: true }).flip-card-primary__title-link
+                            +link({ hasUnderline: true }).flip-card-primary__title-link
+
+                        //- Костыль
+                        +icon('person').flip-card-primary__icon.flip-card-primary__icon_person
+                        +icon('people').flip-card-primary__icon.flip-card-primary__icon_people
 
                     ul.flip-card-primary__services-list
-
-                    //- Костыль
-                    +icon('person').flip-card-primary__icon.flip-card-primary__icon_person
-                    +icon('people').flip-card-primary__icon.flip-card-primary__icon_people
 
                 .flip-card-primary__back
                     h3.h3.flip-card-primary__title-back

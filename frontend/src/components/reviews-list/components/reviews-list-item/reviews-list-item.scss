@@ -1,4 +1,11 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .reviews-list-item {
+    @include media($md) {
+        width: 100%;
+    }
+
     width: calc(50% - var(--spacing-700));
     height: fit-content;
     border: 1px solid var(--color-secondary-bg-600);

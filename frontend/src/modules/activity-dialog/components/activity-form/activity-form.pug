@@ -1,6 +1,6 @@
 mixin activity-form(props = {})
     .activity-form&attributes(attributes)
-        +back-button
+        +back-button.activity-form__back-button
 
         h2.activity-form__title.h2-m Запишитесь на&nbsp;"
             span.activity-form__title-name
@@ -15,7 +15,7 @@ mixin activity-form(props = {})
 
                 +input({ id: 'activity-form-phone', label: 'Номер телефона', placeholder: 'Введите номер', required: true }).activity-form__input
 
-            +checkbox({ labelPosition: 'right' }).activity-form__checkbox
+            +checkbox({ labelPosition: 'right', required: true }).activity-form__checkbox
                 | Я&nbsp;ознакомлен(-а) с&nbsp;
                 +link({ hasUnderline: true })
                     | политикой конфиденциальности

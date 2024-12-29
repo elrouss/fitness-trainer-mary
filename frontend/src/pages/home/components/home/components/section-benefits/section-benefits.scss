@@ -1,5 +1,16 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .section-benefits {
     &__list {
+        @include media($xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media($md) {
+            grid-template-columns: 1fr;
+        }
+
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: var(--spacing-600);
@@ -7,21 +18,57 @@
     }
 
     &__list-item {
-        &:nth-child(6n + 1),
-        &:nth-child(6n + 4) {
+        &:nth-child(6n + 1) {
+            @include media($xl) {
+                grid-column: auto;
+            }
+
             grid-column: 1 / 2;
         }
 
         &:nth-child(6n + 2) {
+            @include media($xl) {
+                grid-column: auto;
+            }
+
             grid-column: 2 / 3;
         }
 
-        &:nth-child(6n + 3),
+        &:nth-child(6n + 3) {
+            @include media($xl) {
+                grid-column: auto;
+            }
+
+            grid-column: 3 / 4;
+        }
+
+        &:nth-child(6n + 4) {
+            @include media($xl) {
+                grid-column: auto;
+                order: 6;
+            }
+
+            grid-column: 1 / 2;
+        }
+
         &:nth-child(6n + 5) {
+            @include media($xl) {
+                grid-row: 2 / 3;
+                grid-column: auto;
+            }
+
+            @include media($md) {
+                grid-row: 4 / 5;
+            }
+
             grid-column: 3 / 4;
         }
 
         &:nth-child(6n + 6) {
+            @include media($xl) {
+                grid-column: auto;
+            }
+
             grid-column: 4 / 5;
         }
     }

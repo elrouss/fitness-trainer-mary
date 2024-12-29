@@ -1,24 +1,66 @@
+@use "styles/constants" as *;
+@use "styles/mixins" as *;
+
 .section-about {
     &__wrapper {
+        @include media($lg) {
+            grid-template-areas:
+                "me slider"
+                "imgs imgs"
+                "facts facts";
+        }
+
+        @include media($md) {
+            grid-template-areas:
+                "me"
+                "slider"
+                "facts"
+                "imgs";
+            grid-template-columns: 1fr;
+        }
+
         display: grid;
+        grid-template-areas:
+            "me slider"
+            "imgs facts";
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-600);
     }
 
     &__slider {
+        @include media($lg) {
+            aspect-ratio: 0.8939 / 1;
+        }
+
+        @include media($md) {
+            aspect-ratio: 1.3358 / 1;
+        }
+
+        grid-area: slider;
+        width: 100%;
         max-width: 680px;
-        height: 472px;
+        aspect-ratio: 1.4406 / 1;
         border-radius: var(--radius-500);
     }
 
     &__imgs {
         display: flex;
+        grid-area: imgs;
         justify-content: space-between;
     }
 
     &__img {
+        @include media($lg) {
+            aspect-ratio: 0.7415 / 1;
+        }
+
+        @include media($md) {
+            width: calc(50% - var(--spacing-700) / 2);
+            aspect-ratio: 0.5704 / 1;
+        }
+
         width: calc(50% - var(--spacing-700));
-        height: 582px;
+        aspect-ratio: 0.5704 / 1;
 
         img {
             border-radius: var(--radius-500);
@@ -28,17 +70,55 @@
     &__facts-wrapper {
         display: flex;
         flex-direction: column;
+        grid-area: facts;
         row-gap: var(--spacing-600);
     }
 
     &__facts {
+        @include media($md) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+
+        @include media($md) {
+            row-gap: var(--spacing-700);
+        }
+
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: var(--spacing-600);
-        height: 37.29%;
+
+        & > .fact-card {
+            @include media($lg) {
+                aspect-ratio: 1.0176 / 1;
+            }
+
+            @include media($md) {
+                aspect-ratio: auto;
+            }
+
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    &__text-card-about {
+        justify-content: space-between;
+
+        & > .text-card__description {
+            margin-top: 0;
+        }
+
+        & > button {
+            text-transform: inherit;
+            color: var(--color-secondary-bg-300);
+        }
     }
 
     &__text-card-fact {
+        @include media($lg) {
+            aspect-ratio: 3.3660 / 1;
+        }
+
         flex-grow: 1;
     }
 }

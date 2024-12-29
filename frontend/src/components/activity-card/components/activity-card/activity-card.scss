@@ -1,6 +1,9 @@
+@use 'styles/constants' as *;
 @use 'styles/mixins' as *;
 
 .activity-card {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     padding: var(--spacing-400);
     border-radius: var(--spacing-550);
@@ -8,24 +11,54 @@
     color: var(--color-secondary-bg-600);
 
     &__wrapper {
+        @include media($lg) {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+
         display: grid;
         grid:
             'img header header' auto
             'img body body' auto
             / auto 1fr 1fr;
         gap: var(--spacing-400) var(--spacing-500);
+
+        &_type {
+            &_past {
+                grid-template-columns: 48% 1fr 1fr;
+            }
+        }
     }
 
     &__img-wrapper {
+        @include media($lg) {
+            &#{&} {
+                aspect-ratio: 1 / 1.0464;
+            }
+        }
+
+        @include media($md) {
+            &#{&} {
+                aspect-ratio: 1 / 1;
+            }
+        }
+
         grid-area: img;
 
         &_type {
             &_past {
-                width: 302px;
-                height: 340px;
+                height: fit-content;
+                aspect-ratio: 1 / 1.1258;
             }
 
             &_future {
+                @include media($lg) {
+                    order: 1;
+                    width: 100%;
+                    height: fit-content;
+                }
+
                 width: 159px;
                 height: 225px;
             }
@@ -37,6 +70,11 @@
     }
 
     &__header {
+        @include media($lg) {
+            order: 2;
+            max-height: 86px;
+        }
+
         @include line-clamp(3);
 
         grid-area: header;
@@ -44,6 +82,11 @@
     }
 
     &__body {
+        @include media($lg) {
+            order: 3;
+            margin-top: auto;
+        }
+
         display: flex;
         flex-direction: column;
         grid-area: body;
@@ -70,11 +113,19 @@
     }
 
     &__details-list {
+        @include media($lg) {
+            flex-direction: column;
+        }
+
         display: flex;
-        column-gap: var(--spacing-600);
+        gap: var(--spacing-600);
     }
 
     &__details-list-item {
+        @include media($lg) {
+            width: auto;
+        }
+
         width: 34.4%;
 
         &:first-child {

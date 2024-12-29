@@ -95,8 +95,8 @@ export class FlipCardPrimary extends InitComponent {
             const button = buttonTemplate.render({ text: 'Выбрать', theme: theme === 'brand' ? 'light' : 'dark' }) as HTMLButtonElement;
 
             li.classList.add('flip-card-primary__price-list-item');
-            title.classList.add('flip-card-primary__price-list-item-title', 't1');
-            price.classList.add('flip-card-primary__price', 'h2');
+            title.classList.add('flip-card-primary__price-list-item-title', 'p1-m');
+            price.classList.add('flip-card-primary__price', 'h2-xl');
 
             title.textContent = service.title;
             price.textContent = formatPrice(service.price);

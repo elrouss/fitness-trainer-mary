@@ -19,7 +19,7 @@ export class ActivityDialog extends Dialog {
     signupButton?: HTMLButtonElement | null;
 
     constructor () {
-        super();
+        super('activity-dialog');
 
         this.wrapper = this.root!.querySelector('.activity-dialog__wrapper') as HTMLDivElement;
 
@@ -30,8 +30,6 @@ export class ActivityDialog extends Dialog {
 
         this.detailsButton = this.signup.querySelector('.back-button') as HTMLButtonElement;
         this.signupButton = this.details.querySelector('.activity-details__signup-button');
-
-        this.close = this.close.bind(this);
 
         // TODO: тут переключать hidden?
         this.closeButton?.addEventListener('click', this.close);

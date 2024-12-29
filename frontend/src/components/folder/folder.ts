@@ -54,6 +54,17 @@ export class Folder {
         });
     };
 
+    private renderImg = (src: string) => {
+        const img = document.createElement('img');
+
+        img.classList.add('folder__img');
+
+        img.src = src;
+        img.alt = ' ';
+
+        return img;
+    };
+
     private render = () => {
         if (!this.data) {
             return;
@@ -65,15 +76,19 @@ export class Folder {
             const k = key as TFolderTab;
 
             panelListItems.forEach((li) => {
+                const documentFragment = document.createDocumentFragment();
+
                 const { label } = li.dataset;
                 const l = label as TFolderTab;
 
                 if (k === l) {
-                    const imgs = li.querySelectorAll('img');
+                    this.data![k].forEach((item) => {
+                        const img = this.renderImg(item);
 
-                    imgs.forEach((img, i) => {
-                        img.src = this.data![k][i];
+                        documentFragment.append(img);
                     });
+
+                    li.append(documentFragment);
                 }
             });
         });

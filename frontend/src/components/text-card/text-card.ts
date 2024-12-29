@@ -1,15 +1,25 @@
+import { DiplomasDialog } from 'modules/diplomas-dialog/diplomas-dialog';
+
 import type { ITextCard } from './interfaces';
 
 export class TextCard {
     root: HTMLTemplateElement | null;
+
+    dialog: DiplomasDialog | null;
 
     data: ITextCard | null;
 
     constructor (data: ITextCard | null) {
         this.root = document.querySelector('.text-card-template');
 
+        this.dialog = null;
+
         this.data = data;
     }
+
+    private onDiplomasDialogHandler = () => {
+        this.dialog!.open();
+    };
 
     render = () => {
         try {
@@ -43,6 +53,19 @@ export class TextCard {
                 accentDescription.textContent = this.data.accentDescription;
 
                 description.appendChild(accentDescription);
+            }
+
+            if (this.data.portfolio) {
+                this.dialog = new DiplomasDialog(this.data.portfolio);
+
+                const button = document.createElement('button');
+
+                button.classList.add('p2');
+                button.textContent = 'Дипломы и сертификаты';
+
+                button.addEventListener('click', this.onDiplomasDialogHandler);
+
+                card.append(button);
             }
 
             return card;

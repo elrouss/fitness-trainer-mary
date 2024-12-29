@@ -39,7 +39,8 @@ class SectionAbout extends InitComponent {
         this.renderTextCard({
             data: this.data?.text1,
             container: this.rootWrapper,
-            action: 'prepend'
+            action: 'prepend',
+            className: 'section-about__text-card-about'
         });
         this.renderSlider();
         this.renderFacts();
@@ -53,10 +54,10 @@ class SectionAbout extends InitComponent {
     }
 
     private renderTextCard = ({
+        className,
         data,
         container,
-        action,
-        className
+        action
     }: IRenderTextCardParams) => {
         try {
             if (!container) {

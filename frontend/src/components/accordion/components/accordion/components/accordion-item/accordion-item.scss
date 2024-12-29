@@ -27,7 +27,7 @@
             "counter panel button";
         grid-template-rows: max-content;
         overflow-y: hidden;
-        padding: calc(var(--spacing-500) - 4px) var(--spacing-500);
+        padding: var(--spacing-500);
         user-select: initial;
     }
 

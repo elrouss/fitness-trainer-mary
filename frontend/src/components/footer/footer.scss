@@ -1,13 +1,50 @@
+@use 'styles/constants' as *;
 @use 'styles/mixins' as *;
 
 .footer {
     &__wrapper {
+        @include media($xxxl) {
+            margin: 0 clamp(1rem, 0.629rem + 1.524vw, 2rem);
+        }
+
+        @include media($lg) {
+            grid:
+                'logo . img' auto
+                '. . img' var(--spacing-500)
+                'address . img' auto
+                '. . img' calc(var(--spacing-600) + var(--spacing-375))
+                'copyright . .' auto
+                '. . .' var(--spacing-600)
+                'privacy-policy . user-agreement' auto
+                '. . .' var(--spacing-600)
+                'authors . .' auto
+                / 37.64% auto max-content;
+        }
+
+        @include media($md) {
+            grid:
+                'logo' auto
+                '.' var(--spacing-500)
+                'address' auto
+                '.' var(--spacing-350)
+                'img' auto
+                '.' var(--spacing-400)
+                'copyright' auto
+                '.' var(--spacing-600)
+                'privacy-policy' auto
+                '.' var(--spacing-600)
+                'user-agreement' auto
+                '.' var(--spacing-600)
+                'authors' auto
+                / 1fr;
+        }
+
         display: grid;
         grid:
             'logo . address address address . img' auto
             '. . . . . . .' var(--spacing-500)
             'copyright . privacy-policy . user-agreement . authors' auto
-            / 17% auto max-content var(--spacing-650) max-content auto 17%;
+            / 18% auto max-content var(--spacing-650) max-content auto 18%;
         max-width: var(--container-main);
         padding: var(--spacing-400) 0;
         margin: 0 auto;
@@ -64,7 +101,7 @@
         @include hover {
             color: var(--color-secondary-bg-600);
         }
-    
+
         @include active {
             color: var(--color-secondary-bg-600);
         }
@@ -79,6 +116,10 @@
     }
 
     &__img-wrapper {
+        @include media($lg) {
+            justify-self: start;
+        }
+
         grid-area: img;
         justify-self: center;
     }

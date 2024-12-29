@@ -1,7 +1,15 @@
+@use 'styles/constants' as *;
+@use 'styles/mixins' as *;
+
 .text-card {
+    @include media($md) {
+        row-gap: 32px;
+    }
+
     display: flex;
     flex-direction: column;
-    padding: var(--spacing-400);
+    align-items: flex-start;
+    padding: clamp(24px, 21.024px + 0.76vw, 32px);
     border-radius: var(--radius-500);
     text-transform: uppercase;
     background-color: var(--color-secondary-bg-600);

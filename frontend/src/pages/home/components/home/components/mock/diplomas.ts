@@ -10,16 +10,18 @@ import MOCK_AWARDS_2 from 'assets/images/awards-2.jpg';
 import MOCK_AWARDS_3 from 'assets/images/awards-3.jpg';
 import MOCK_AWARDS_4 from 'assets/images/awards-4.jpg';
 
-import type { ISectionDiplomas } from '../section-diplomas/interfaces';
+import type { ITextCardWithPortfolio } from '../section-about/interfaces';
 
-export const MOCK_DIPLOMAS: ISectionDiplomas = {
-    folder: {
+export const MOCK_DIPLOMAS: Record<'portfolio', ITextCardWithPortfolio['portfolio']> = {
+    portfolio: {
         degrees: [
             MOCK_DEGREE_1,
+            MOCK_DEGREE_2,
             MOCK_DEGREE_2
         ],
         diplomas: [
             MOCK_DIPLOMAS_1,
+            MOCK_DIPLOMAS_2,
             MOCK_DIPLOMAS_2
         ],
         certificates: [

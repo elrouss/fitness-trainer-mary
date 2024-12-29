@@ -1,11 +1,19 @@
+@use "styles/constants" as *;
+@use "styles/mixins" as *;
+
 .section-results {
     &__wrapper {
         &#{&} {
-            max-width: none;
+            @include media(1440, min-width) {
+                margin-left: calc((100vw - var(--container-main)) / 2);
+            }
 
-            // TODO: временно до адаптива
+            @include media($md) {
+                margin-right: clamp(16px, 10.064px + 1.524vw, 32px);
+            }
+
+            max-width: none;
             margin-right: 0;
-            margin-left: 32px;
         }
     }
 

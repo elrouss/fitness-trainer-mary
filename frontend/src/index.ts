@@ -13,7 +13,6 @@ import './pages/home/components/home/components/section-benefits/section-benefit
 import './pages/home/components/home/components/section-results/section-results';
 import './pages/home/components/home/components/section-activities/section-activities';
 import './pages/home/components/home/components/section-reviews/section-reviews';
-import './pages/home/components/home/components/section-diplomas/section-diplomas';
 
 // MODULES
 import './modules/feedback-form/feedback-form';

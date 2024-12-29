@@ -1,7 +1,15 @@
+@use "styles/constants" as *;
 @use "styles/placeholders" as *;
 @use "styles/mixins" as *;
 
 .checkbox2 {
+    @include media($md) {
+        $padding: clamp(1.125rem, 0.867rem + 1.058vw, 1.375rem);
+
+        padding-right: $padding;
+        padding-left: $padding;
+    }
+
     @include transition(("border-color", "color"));
 
     @include hover {
@@ -16,7 +24,7 @@
     display: inline-flex;
     column-gap: var(--spacing-700);
     align-items: center;
-    padding: var(--spacing-700) 23px;
+    padding: var(--spacing-700) 22px;
     border: 1px solid currentcolor;
     border-radius: var(--radius-500);
     background-color: var(--color-white);

@@ -1,51 +1,50 @@
 $typography:
-    "h1" "Bebas Neue" 700 160px 144px,
-    "h1-m" "Bebas Neue" 700 110px 90px,
-    "h2" "Bebas Neue" 700 64px 64px,
-    "h2-l" "Bebas Neue" 700 48px 43.2px,
-    "h2-m" "Bebas Neue" 700 40px 40px,
-    "h3" "Bebas Neue" 700 36px 36px,
-    "h4" "Bebas Neue" 700 20px 20px,
-    "h5" "Bebas Neue" 700 18px 18px,
-    "h6" "Bebas Neue" 700 16px 36px,
-    "h7" "Bebas Neue" 700 32px 32px,
-    "h8" "Bebas Neue" 700 24px 24px,
-    "p1" "Inter" 600 24px 29.05px,
-    "p2" "Inter" 600 16px 19.36px,
-    "p3" "Inter" 500 20px 22px,
-    "p4" "Inter" 500 16px 19.36px,
-    "p4-m" "Inter" 500 14px 16.94px,
-    "p5" "Inter" 400 16px 19.36px,
-    "p6" "Inter" 400 16px 16px,
-    "p7" "Inter" 400 14px 20px,
-    "p8" "Inter" 400 12px 14.52px,
-    "p9" "Inter" 400 12px 12px,
-    "t1" "Inter" 600 20px 24.2px,
-    "t2" "Inter" 400 14px 16.8px;
+    "h1" "Bebas Neue" 700 clamp(1.25rem, -2rem + 13.33vw, 10rem) clamp(1.25rem, -1.629rem + 11.81vw, 9rem),
+    "h1-m" "Bebas Neue" 700 clamp(3rem, 1.561rem + 5.9vw, 6.875rem) clamp(3rem, 2.025rem + 4vw, 5.625rem),
+    "h2" "Bebas Neue" 700 clamp(2.25rem, 1.6rem + 2.67vw, 4rem) clamp(2.25rem, 1.749rem + 2.06vw, 3.6rem),
+    "h2-xl" "Bebas Neue" 700 4rem 3.6rem,
+    "h2-l" "Bebas Neue" 700 clamp(2.25rem, 1.476rem + 3.17vw, 3rem) clamp(2.25rem, 1.786rem + 1.9vw, 2.7rem),
+    "h2-m" "Bebas Neue" 700 clamp(2.25rem, 2.157rem + 0.38vw, 2.5rem) clamp(2.25rem, 2.157rem + 0.38vw, 2.5rem),
+    "h3" "Bebas Neue" 700 clamp(1.625rem, 1.393rem + 0.95vw, 2.25rem) clamp(1.625rem, 1.393rem + 0.95vw, 2.25rem),
+    "h3-m" "Bebas Neue" 700 2.25rem 2.25rem,
+    "h4" "Bebas Neue" 700 1.25rem 1.25rem,
+    "h5" "Bebas Neue" 700 clamp(1.625rem, 1.486rem + 0.57vw, 2rem) clamp(1.625rem, 1.486rem + 0.57vw, 2rem),
+    "h6" "Bebas Neue" 700 clamp(1.125rem, 0.986rem + 0.57vw, 1.5rem) clamp(1.125rem, 0.986rem + 0.57vw, 1.5rem),
+    "p1-l" "Inter" 600 1.5rem 1.8156rem,
+    "p1-m" "Inter" 600 1.25rem 1.5125rem,
+    "p1" "Inter" 600 clamp(1rem, 0.814rem + 0.76vw, 1.5rem) clamp(1.21rem, 0.985rem + 0.92vw, 1.816rem),
+    "p2" "Inter" 600 1rem 1.21rem,
+    "p3" "Inter" 500 clamp(1rem, 0.907rem + 0.38vw, 1.25rem) clamp(1.1rem, 0.998rem + 0.42vw, 1.375rem),
+    "p4" "Inter" 500 0.875rem 1.0588rem,
+    "p5" "Inter" 400 clamp(0.875rem, 0.829rem + 0.19vw, 1rem) clamp(1.059rem, 1.003rem + 0.23vw, 1.21rem),
+    "p6" "Inter" 400 1rem 1rem,
+    "p7" "Inter" 400 0.875rem 1.25rem,
+    "p8" "Inter" 400 12px 12px,
+    "t1" "Inter" 400 clamp(0.75rem, 0.704rem + 0.19vw, 0.875rem) clamp(0.9rem, 0.844rem + 0.23vw, 1.05rem);
 
 @mixin typography(
-    $className,
-    $fontFamily,
-    $fontWeight,
-    $fontSize,
-    $lineHeight
+    $class-name,
+    $font-family,
+    $font-weight,
+    $font-size,
+    $line-height
 ) {
-    .#{$className} {
-        font-family: $fontFamily, Arial, Helvetica, sans-serif;
-        font-weight: $fontWeight;
-        font-size: $fontSize;
-        line-height: $lineHeight;
+    .#{$class-name} {
+        font-family: $font-family, Arial, Helvetica, sans-serif;
+        font-weight: $font-weight;
+        font-size: $font-size;
+        line-height: $line-height;
     }
 }
 
-@each $className, $fontFamily, $fontWeight, $fontSize,
-    $lineHeight in $typography
+@each $class-name, $font-family, $font-weight, $font-size,
+    $line-height in $typography
 {
     @include typography(
-        $className,
-        $fontFamily,
-        $fontWeight,
-        $fontSize,
-        $lineHeight
+        $class-name,
+        $font-family,
+        $font-weight,
+        $font-size,
+        $line-height
     );
 }

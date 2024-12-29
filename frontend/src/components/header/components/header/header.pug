@@ -1,25 +1,5 @@
 mixin header(props = {})
-    //- TODO: Сделать решение под импорт JSON
     -
-        const links = [
-            {
-                label: 'Обо мне',
-                href: '#about'
-            },
-            {
-                label: 'Тренировки',
-                href: '#workout'
-            },
-            {
-                label: 'Результаты',
-                href: '#results'
-            },
-            {
-                label: 'Мероприятия',
-                href: '#activities'
-            }
-        ]
-
         const messengers = [
             {
                 icon: 'whatsapp',
@@ -34,19 +14,36 @@ mixin header(props = {})
         ]
 
     header.header&attributes(attributes)
-        .header__wrapper
-            a.header__logo-link(
+        .header__wrapper.header__wrapper_desktop
+            a.header__logo-link.header__backdrop(
                 href="#",
                 aria-label="Прокрутить страницу к началу"
             )
-                span.header__backdrop.header__backdrop_logo
-                    +logo
+                +logo.header__logo
 
             .header__backdrop.header__backdrop_nav-bar
-                +nav-bar({ links })
+                +nav-bar.p6
 
             .header__backdrop.header__backdrop_buttons
                 each messenger in messengers
                     +link-button(messenger)
 
                 +button({ text: 'Начать заниматься', href: '#feedback' }).header__button
+
+        .header__wrapper.header__wrapper_tablet
+            .header__backdrop
+                a.header__logo-link(
+                    href="#",
+                    aria-label="Прокрутить страницу к началу"
+                )
+                    +logo.header__logo
+
+                .header__backdrop.header__backdrop_buttons
+                    each messenger in messengers
+                        +link-button(messenger)
+
+                    +button({ text: 'Начать заниматься', href: '#feedback' }).header__button
+
+            +burger.header__burger
+
+        +nav-bar.header__nav-bar.visually-hidden.h3-m

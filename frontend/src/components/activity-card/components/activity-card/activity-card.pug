@@ -1,9 +1,11 @@
 mixin activity-card(props = {})
+    - const classNames = props.classNames || {};
+
     template.activity-card-template(class=`activity-card-template_type_${props.type}`)
         article.activity-card
-            .activity-card__wrapper
+            .activity-card__wrapper(class=classNames.wrapper)
                 header.activity-card__header
-                    h3.activity-card__title.h7
+                    h3.activity-card__title.h5
 
                 +img({ img: 'activity-card__img' }).activity-card__img-wrapper(
                     class=`activity-card__img-wrapper_type_${props.type}`
@@ -20,7 +22,7 @@ mixin activity-card(props = {})
 
             if props.hasFooter
                 footer.activity-card__footer
-                    ul.activity-card__details-list.h8
+                    ul.activity-card__details-list.h6
                         li.activity-card__details-list-item
                             h4.activity-card__detail-title Количество людей:
 
