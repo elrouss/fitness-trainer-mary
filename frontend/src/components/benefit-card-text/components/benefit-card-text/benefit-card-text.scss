@@ -36,7 +36,7 @@
     &__title {
         grid-area: title;
         text-transform: uppercase;
-        hyphens: auto;
+        word-break: break-word;
     }
 
     &__description {
