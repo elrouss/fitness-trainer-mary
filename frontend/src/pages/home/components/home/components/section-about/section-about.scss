@@ -116,6 +116,7 @@
 
     &__text-card-fact {
         @include media($lg) {
+            width: 100%;
             aspect-ratio: 3.3660 / 1;
         }
 
