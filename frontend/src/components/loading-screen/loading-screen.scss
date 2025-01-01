@@ -1,0 +1,34 @@
+@use 'styles/mixins' as *;
+
+.loading-screen {
+    @include transition((opacity, visibility), 1s);
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(0deg, var(--color-primary-bg-100), var(--color-primary-bg-100)),
+        linear-gradient(0deg, rgba(var(--color-black-rgb), 0.2), rgba(var(--color-black-rgb), 0.2));
+    opacity: 1;
+    visibility: visible;
+
+    &__wrapper {
+        display: flex;
+        height: 100%;
+
+        &#{&} {
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+    }
+
+    &__progress-bar {
+        margin-top: auto;
+        font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 10rem;
+        line-height: 9rem;
+        color: var(--color-primary-main-100);
+    }
+}

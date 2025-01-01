@@ -1,5 +1,5 @@
 mixin section-workout(props = {})
-    +section({ title: { startText: 'Виды тренировок' } })#workout
+    +section({ title: { startText: 'Виды тренировок' }, hasTitleAnimation: true })#workout
         ul.section-workout__cards-list
             li.section-workout__cards-list-item
                 +more-info-card({ title: 'Подробнее об\u00a0онлайн-сопровождении', text: 'Узнать больше', icon: 'book' })

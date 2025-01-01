@@ -2,38 +2,36 @@
 @use 'styles/mixins' as *;
 
 .section-reviews {
-    &__wrapper {
-        position: relative;
-    }
+    overflow-y: hidden;
 
     &__reviews-list {
         margin: var(--spacing-300) auto 0;
     }
 
-    &__deco-element {
-        @include media($xxxl) {
-            width: 28.925vw;
-        }
+    &__reviews-list-wrapper {
+        position: relative;
+        max-width: 502px;
+        margin: 0 auto;
+    }
 
+    &__deco-element {
         @include media($lg) {
             display: none;
         }
 
         position: absolute;
-        top: 50%;
+        top: 0;
         z-index: 1;
-        width: 544px;
-        aspect-ratio: 0.8704 / 1;
+        width: calc(50% - (var(--spacing-600) / 2));
+        aspect-ratio: 1 / 2.1564;
         background: center / cover no-repeat url("./assets/images/dumbbell.png");
 
         &_before {
-            left: 25%;
-            transform: rotate(-18deg) translate(-50%, -50%);
+            left: 0;
         }
 
         &_after {
-            right: 16%;
-            transform: rotate(-18deg) translate(50%, -50%);
+            right: 0;
         }
     }
 }

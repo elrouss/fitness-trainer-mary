@@ -1,8 +1,9 @@
 mixin section-reviews(props = {})
     +section({ title: { align: 'center', startText: 'Отзывы о совместной работе' } }).section-reviews
         .section-reviews__wrapper
-            .section-reviews__deco-element.section-reviews__deco-element_before
+            .section-reviews__reviews-list-wrapper
+                .section-reviews__deco-element.section-reviews__deco-element_before
 
-            +reviews-list.section-reviews__reviews-list
+                +reviews-list.section-reviews__reviews-list
 
-            .section-reviews__deco-element.section-reviews__deco-element_after
+                .section-reviews__deco-element.section-reviews__deco-element_after
