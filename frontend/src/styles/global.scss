@@ -56,7 +56,9 @@ body {
 }
 
 .scroll-lock {
-  overflow-y: hidden;
+  @include hide-scrollbar;
+
+  touch-action: none;
 }
 
 .hidden {

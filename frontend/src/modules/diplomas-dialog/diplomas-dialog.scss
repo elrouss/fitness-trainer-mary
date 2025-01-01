@@ -1,3 +1,5 @@
 .diplomas-dialog {
-    background-color: var(--color-primary-bg-200);
+    & > .dialog__wrapper {
+        background-color: var(--color-primary-bg-200);
+    }
 }

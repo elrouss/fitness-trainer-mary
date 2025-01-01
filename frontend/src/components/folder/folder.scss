@@ -3,14 +3,11 @@
 
 .folder {
     &__tabs-list {
+        @include hide-scrollbar;
+
         display: flex;
         column-gap: var(--spacing-600);
         overflow-x: auto;
-
-        &::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
     }
 
     &__tabs-list-item {
