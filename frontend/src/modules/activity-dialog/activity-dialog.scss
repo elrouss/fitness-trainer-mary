@@ -2,16 +2,6 @@
 @use 'styles/mixins' as *;
 
 .activity-dialog {
-    &#{&} {
-        @include media($md) {
-            height: calc(100% - 5%);
-        }
-
-        @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
-            height: calc(100% - 5%);
-        }
-    }
-
     &__wrapper {
         @include media($lg) {
             @include hide-scrollbar;

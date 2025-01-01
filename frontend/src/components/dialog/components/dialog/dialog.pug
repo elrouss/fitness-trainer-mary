@@ -1,5 +1,5 @@
 mixin dialog(props = {})
-    dialog.dialog(aria-label=props.ariaLabel)&attributes(attributes)
+    .dialog&attributes(attributes)
         .dialog__wrapper
             +icon-button({ tag: 'button', icon: 'cross', ariaLabel: 'Закрыть диалоговое окно' }).dialog__close-button
 
