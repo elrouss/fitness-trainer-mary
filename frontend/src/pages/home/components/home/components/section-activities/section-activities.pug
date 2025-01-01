@@ -1,5 +1,5 @@
 mixin section-activities(props = {})
-    +section({ title: { align: 'center', startText: 'Мероприятия' } })#activities.section-activities
+    +section({ title: { align: 'center', startText: 'Мероприятия' }, hasTitleAnimation: true })#activities.section-activities
         ul.section-activities__tabs
             li.section-activities__tab-wrapper
                 +tab({ label: 'Прошедшие', name: 'activities', value: 'past', borderRadiusPosition: 'left' }).section-activities__tab

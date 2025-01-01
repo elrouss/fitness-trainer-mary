@@ -21,7 +21,8 @@ mixin section-title(props = {})
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
             class!=`section-title_align_${props.title.align || 'left'}`,
-            class!=endTextClass
+            class!=endTextClass,
+            class=props.hasAnimation && "section-title_animation"
         )
             span!= props.title.startText
 
@@ -31,7 +32,8 @@ mixin section-title(props = {})
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=props.title.className,
             class!=`section-title_theme_${props.theme}`,
-            class!=`section-title_align_${props.title.align || 'left'}`
+            class!=`section-title_align_${props.title.align || 'left'}`,
+            class=props.hasAnimation && "section-title_animation"
         )
             span!= props.title.startText
 
@@ -39,5 +41,6 @@ mixin section-title(props = {})
     else
         #{props.title.tag || 'h2'}.section-title.h2(
             class!=`section-title_theme_${props.theme}`,
-            class!=`section-title_align_${props.title.align || 'left'}`
+            class!=`section-title_align_${props.title.align || 'left'}`,
+            class=props.hasAnimation && "section-title_animation"
         )!= props.title.startText
