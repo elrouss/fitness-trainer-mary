@@ -97,6 +97,7 @@
 }
 
 @mixin hide-scrollbar {
+    overflow: hidden;
     overflow: -moz-scrollbars-none; // older versions of Firefox
     -ms-overflow-style: none;  // Internet Explorer 10+
     scrollbar-width: none; // Chrome, Safari, Firefox
