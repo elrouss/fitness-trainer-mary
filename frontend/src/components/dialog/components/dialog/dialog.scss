@@ -2,49 +2,56 @@
 @use "styles/mixins" as *;
 
 .dialog {
-    @include media($lg) {
-        width: 91.7%;
-    }
-
-    @include media($md) {
-        border-radius: var(--radius-500);
-    }
-
     @include transition(('opacity', 'visibility'));
 
     position: fixed;
     top: 50%;
     left: 50%;
-    display: block;
-    overflow: visible;
-    width: 82%;
-    max-width: 1176px;
-    max-height: none;
-    padding: 0;
-    border: none;
-    border-radius: var(--radius-300);
-    margin: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, -50%);
 
-    @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
-        border-radius: var(--radius-500);
-    }
-
-    &[open] {
+    &_open {
         opacity: 1;
         visibility: visible;
     }
 
-    &::backdrop {
-        background-color: rgba(var(--color-primary-bg-100-rgb), 0.5);
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        min-height: 100vh;
+        background-color: rgba(var(--color-black-rgb), 0.5);
     }
 
     &__wrapper {
+        @include media($lg) {
+            width: 91.7%;
+        }
+
+        @include media($md) {
+            border-radius: var(--radius-500);
+        }
+
+        position: relative;
         display: flex;
         flex-direction: column;
+        width: 82%;
+        max-width: 1176px;
+        max-height: calc(100% - clamp(1rem, 0.629rem + 1.524vw, 2rem));
         padding: var(--spacing-400);
+        border-radius: var(--radius-300);
+        background-color: var(--color-white);
+
+        @media screen and (max-width: #{$lg}px) and (orientation: landscape) {
+            border-radius: var(--radius-500);
+        }
     }
 
     &__close-button {
