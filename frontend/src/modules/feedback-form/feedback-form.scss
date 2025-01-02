@@ -38,7 +38,7 @@
         }
 
         @include media($md) {
-            aspect-ratio: 0.7287 / 1;
+            aspect-ratio: 1.12 / 1;
         }
 
         position: relative;
@@ -57,6 +57,12 @@
             aspect-ratio: 1.8803 / 1;
             background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, #000 68.16%);
             opacity: 0.5;
+        }
+    }
+
+    &__img {
+        @include media($md) {
+            object-position: top;
         }
     }
 
