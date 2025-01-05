@@ -4,23 +4,22 @@ import type { TTabsPanelState } from 'pages/home/components/home/components/sect
 import type { TActivityDetails } from 'modules/activity-dialog/interfaces/interfaces';
 
 export class ActivityDetails {
-    wrapper: HTMLDivElement;
+    private wrapper: HTMLDivElement;
 
-    title: HTMLHeadingElement;
-    description: HTMLParagraphElement;
-    price?: HTMLParagraphElement;
-    address: HTMLElement;
-    people: HTMLParagraphElement;
-    dateStart: HTMLSpanElement;
-    dateEnd: HTMLSpanElement;
-    year: HTMLSpanElement;
-    signupButton: HTMLButtonElement;
+    private title: HTMLHeadingElement;
+    private description: HTMLParagraphElement;
+    private price?: HTMLParagraphElement;
+    private address: HTMLElement;
+    private people: HTMLParagraphElement;
+    private dateStart: HTMLSpanElement;
+    private dateEnd: HTMLSpanElement;
+    private year: HTMLSpanElement;
+    private signupButton: HTMLButtonElement;
 
-    type?: TTabsPanelState;
+    private type?: TTabsPanelState;
 
-    constructor (wrapper: HTMLDivElement, type: TTabsPanelState) {
+    constructor (wrapper: HTMLDivElement) {
         this.wrapper = wrapper;
-        this.type = type;
 
         this.title = this.wrapper.querySelector('.activity-details__title') as HTMLHeadingElement;
         this.description = this.wrapper.querySelector('.activity-details__description') as HTMLParagraphElement;
@@ -51,7 +50,9 @@ export class ActivityDetails {
         }
     };
 
-    render = (data: TActivityDetails) => {
+    render = (data: TActivityDetails, type: TTabsPanelState) => {
+        this.type = type;
+
         this.title.textContent = data?.title || '';
         this.description.textContent = data?.description || '';
         this.address.textContent = data?.place || '';

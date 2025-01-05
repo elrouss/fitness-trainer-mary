@@ -1,29 +1,30 @@
 mixin activity-form(props = {})
     .activity-form&attributes(attributes)
-        +back-button.activity-form__back-button
+        +back-button({ text: 'Подробнее' }).activity-form__back-button
 
-        h2.activity-form__title.h2-m Запишитесь на&nbsp;"
-            span.activity-form__title-name
+        +form.activity-form__form
+            .activity-form__form-wrapper
+                h2.activity-form__title.h2-m Запишитесь на&nbsp;"
+                    span.activity-form__title-name
 
-            | "
+                    | "
 
-        p.activity-form__subtitle.h4 Внесите контактные данные, и&nbsp;я&nbsp;с&nbsp;вами свяжусь
+                p.activity-form__subtitle.h4 Оставьте контактные данные, и&nbsp;я&nbsp;с&nbsp;вами свяжусь
 
-        form.activity-form__form
-            .activity-form__inputs
-                +input({ id: 'activity-form-name', label: 'Имя, фамилия', placeholder: 'Введите имя', required: true }).activity-form__input
+                .activity-form__inputs
+                    +input({ id: 'activity-form-name', label: 'Имя, фамилия', name: 'name', placeholder: 'Введите имя', required: true }).activity-form__input
 
-                +input({ id: 'activity-form-phone', label: 'Номер телефона', placeholder: 'Введите номер', required: true }).activity-form__input
+                    +input({ id: 'activity-form-phone', type: 'tel', label: 'Телефон', name: 'phone', placeholder: 'Введите номер', required: true }).activity-form__input
 
-            +checkbox({ labelPosition: 'right', required: true }).activity-form__checkbox
-                | Я&nbsp;ознакомлен(-а) с&nbsp;
-                +link({ hasUnderline: true })
-                    | политикой конфиденциальности
+                +checkbox({ labelPosition: 'right', name: 'hasPersonalDataConsent', required: true }).activity-form__checkbox
+                    | Я&nbsp;ознакомлен(-а) с&nbsp;
+                    +link({ hasUnderline: true })
+                        | политикой конфиденциальности
 
-                |
-                | и&nbsp;согласен(-на) с&nbsp;
+                    |
+                    | и&nbsp;согласен(-на) с&nbsp;
 
-                +link({ hasUnderline: true })
-                    | обработкой персональных данных
+                    +link({ hasUnderline: true })
+                        | обработкой персональных данных
 
-            +button({ type: 'submit', text: 'Отправить' }).activity-form__submit-button
+                +button({ type: 'submit', text: 'Отправить' }).activity-form__submit-button

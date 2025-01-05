@@ -3,4 +3,4 @@ mixin back-button(props = {})
         span.back-button__icon-wrapper
             +icon('arrow-down-bold').back-button__icon
 
-        span.back-button__text Подробнее
+        span.back-button__text!= props.text

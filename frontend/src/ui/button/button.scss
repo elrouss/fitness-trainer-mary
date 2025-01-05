@@ -65,17 +65,22 @@
         }
     }
 
+    &_pending {
+        padding-top: 9px;
+        padding-bottom: 9px;
+
+        &#{&} > #{$this}__spinner {
+            display: inline-flex;
+
+            & + #{$this}__text {
+                display: none;
+            }
+        }
+    }
+
     &__spinner {
         &#{&} {
             display: none;
-
-            &_visible {
-                display: inline-flex;
-
-                & + #{$this}__text {
-                    display: none;
-                }
-            }
         }
     }
 }

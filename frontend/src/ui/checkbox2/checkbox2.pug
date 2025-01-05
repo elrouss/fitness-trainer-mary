@@ -1,6 +1,9 @@
 mixin checkbox2(props = {})
     label.p6.checkbox2&attributes(attributes)
-        input.checkbox2__input(type="checkbox")
+        input.checkbox2__input(type="checkbox")(
+            name=props.name,
+            value=props.value
+        )
 
         span.checkbox2__iconWrapper
             +icon(props.icon).checkbox2__icon

@@ -1,0 +1,8 @@
+mixin form(props = {})
+    .form&attributes(attributes)
+        form.form__form(novalidate)
+            block
+
+        +form-result({ success: true }).hidden
+
+        +form-result.hidden
