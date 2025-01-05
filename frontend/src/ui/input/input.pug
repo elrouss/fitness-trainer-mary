@@ -9,7 +9,10 @@ mixin input(props = {})
             input.input__input.p6(
                 id=props.id,
                 type=props.type || "text",
-                placeholder=props.placeholder
+                name=props.name,
+                placeholder=props.placeholder,
+                autocomplete=props.autocomplete,
+                required=props.required
             )
 
             button.input__icon-status.hidden

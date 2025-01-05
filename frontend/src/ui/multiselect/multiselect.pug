@@ -3,7 +3,7 @@ mixin multiselect(props = {})
         span.multiselect__label!= props.label
 
         .multiselect__wrapper
-            .multiselect__input-container
+            .multiselect__input-container(data-name=props.name)
                 span.multiselect__input-placeholder!= props.placeholder
 
                 span.multiselect__input-icon-wrapper

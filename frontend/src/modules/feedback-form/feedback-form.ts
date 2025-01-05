@@ -1,18 +1,21 @@
+import { Form } from 'modules/form';
 import { Multiselect } from 'ui/multiselect/multiselect';
 
 import { MOCK_FEEDBACK } from 'pages/home/components/home/components/mock/feedback';
 
-class FeedbackFrom {
-    private root: HTMLDivElement;
+class FeedbackForm extends Form {
+    private feedbackForm: HTMLDivElement;
 
     private photoCover: HTMLImageElement;
 
     data: string;
 
     constructor (data: string) {
-        this.root = document.querySelector('.feedback-form') as HTMLDivElement;
+        super('feedback-form__form');
 
-        this.photoCover = this.root.querySelector('.feedback-form__img') as HTMLImageElement;
+        this.feedbackForm = document.querySelector('.feedback-form') as HTMLDivElement;
+
+        this.photoCover = this.feedbackForm.querySelector('.feedback-form__img') as HTMLImageElement;
 
         this.data = data;
 
@@ -28,5 +31,5 @@ class FeedbackFrom {
     };
 }
 
-new FeedbackFrom(MOCK_FEEDBACK.photoCover);
+new FeedbackForm(MOCK_FEEDBACK.photoCover);
 new Multiselect(MOCK_FEEDBACK.multiselect);

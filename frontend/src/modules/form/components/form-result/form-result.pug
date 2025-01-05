@@ -1,0 +1,23 @@
+mixin form-result(props = {})
+    -
+        const success = props.success;
+        const data = {
+            title: success ? 'Заявка успешно отправлена!' : 'К&nbsp;сожалению, заявка не&nbsp;отправлена...',
+            subtitle: success ? 'Скоро вернусь к&nbsp;вам с&nbsp;обратной связью' : 'Попробуйте снова или вернитесь позже',
+            img: success ? './assets/images/lemon-relax-dark.png' : './assets/images/lemon-workout.png',
+            alt: success ? 'Медитирующий лимон' : 'Лимон, поднимающий штангу'
+        };
+
+    .form-result&attributes(attributes)(
+        class=success ? "form-result_success" : "form-result_fail"
+    )
+        if (!success)
+            +back-button({ text: 'Назад' }).form-result__back-button
+
+        .form-result__wrapper
+            .form-result__header
+                #{props.tag || 'h3'}.form-result__title.h3!= data.title
+
+                p.form-result__subtitle.h4!= data.subtitle
+
+            +img({ src: data.img, alt: data.alt }).form-result__img-wrapper

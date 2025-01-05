@@ -1,0 +1,32 @@
+.form-result {
+    display: grid;
+    height: 100%;
+
+    &_fail {
+        grid-template-rows: max-content 1fr;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        text-align: center;
+        color: var(--color-secondary-bg-100);
+    }
+
+    &__subtitle {
+        margin-top: var(--spacing-700);
+        text-align: center;
+        color: var(--color-primary-accent-100);
+    }
+
+    &__img-wrapper {
+        width: 274px;
+        aspect-ratio: 1 / 0.7664;
+        margin-top: var(--spacing-250);
+    }
+}

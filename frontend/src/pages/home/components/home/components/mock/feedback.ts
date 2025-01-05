@@ -9,27 +9,27 @@ export const MOCK_FEEDBACK: ISectionFeedback = {
             {
                 label: 'Персональная (разовая)',
                 name: 'trainingType',
-                value: 'personalOneTimeTraining'
+                value: '1'
             },
             {
                 label: 'Персональная (10 тренировок)',
                 name: 'trainingType',
-                value: 'personalMultipleTimeTraining'
+                value: '2'
             },
             {
                 label: 'Сплит (разовая)',
                 name: 'trainingType',
-                value: 'splitOneTimeTraining'
+                value: '3'
             },
             {
                 label: 'Сплит (10 тренировок)',
                 name: 'trainingType',
-                value: 'splitMultipleTimeTraining'
+                value: '4'
             },
             {
                 label: 'Онлайн-сопровождение',
                 name: 'trainingType',
-                value: 'online'
+                value: '5'
             }
         ]
     }

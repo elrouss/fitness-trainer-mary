@@ -24,6 +24,8 @@
     }
 
     &__input {
+        @include transition(border-color);
+
         @include focus-visible {
             outline: none;
         }
@@ -38,6 +40,14 @@
 
         &::placeholder {
             color: var(--color-secondary-bg-375);
+        }
+
+        &_success {
+            border-color: var(--color-status-success);
+        }
+
+        &_error {
+            border-color: var(--color-status-danger);
         }
     }
 
@@ -66,14 +76,14 @@
         }
 
         &_error {
-            @include hover {
+            background-color: var(--color-status-danger);
+
+            &:hover {
                 + #{$this}__tooltip {
                     opacity: 1;
                     visibility: visible;
                 }
             }
-
-            background-color: var(--color-status-danger);
 
             &::after {
                 @extend %position-center;

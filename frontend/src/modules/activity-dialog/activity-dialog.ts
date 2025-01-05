@@ -3,20 +3,29 @@ import { ActivityDetails } from './components/activity-details/activity-details'
 import { ActivityForm } from './components/activity-form/activity-form';
 
 import type {
+    TFormCustomEventDetail,
+    TFormCustomEvent
+} from 'modules/form/components/form/interfaces';
+import type {
     IActivityDialog,
     TActivityDialogState
 } from './interfaces/interfaces';
 
 export class ActivityDialog extends Dialog {
-    wrapper: HTMLDivElement;
+    private wrapper: HTMLDivElement;
 
-    details: HTMLDivElement;
-    signup: HTMLDivElement;
+    private details: HTMLDivElement;
+    private signup: HTMLDivElement;
 
-    img: HTMLImageElement;
+    private img: HTMLImageElement;
 
-    detailsButton: HTMLButtonElement;
-    signupButton?: HTMLButtonElement | null;
+    private detailsButton: HTMLButtonElement;
+    private signupButton?: HTMLButtonElement | null;
+
+    private resetForm: TFormCustomEventDetail['reset'] | null;
+
+    private activityDetailsInstance: ActivityDetails;
+    private activityFormInstance: ActivityForm;
 
     constructor () {
         super('activity-dialog');
@@ -31,12 +40,20 @@ export class ActivityDialog extends Dialog {
         this.detailsButton = this.signup.querySelector('.back-button') as HTMLButtonElement;
         this.signupButton = this.details.querySelector('.activity-details__signup-button');
 
-        // TODO: тут переключать hidden?
-        this.closeButton?.addEventListener('click', this.close);
+        this.resetForm = null;
+
+        this.activityDetailsInstance = new ActivityDetails(this.details);
+        this.activityFormInstance = new ActivityForm(this.signup);
+
+        this.wrapper.addEventListener('customEventFormReset', ((event: CustomEvent) => this.setResetFormFunc(event)) as EventListener);
 
         this.detailsButton.addEventListener('click', this.onDetailsHandler);
         this.signupButton?.addEventListener('click', this.onSignupHandler);
     }
+
+    private setResetFormFunc = (event: TFormCustomEvent) => {
+        this.resetForm = event.detail.reset;
+    };
 
     private toggleDialogState = (state: TActivityDialogState) => {
         switch (state) {
@@ -78,9 +95,19 @@ export class ActivityDialog extends Dialog {
         this.img.src = img;
         this.img.title = title;
 
-        new ActivityDetails(this.details, type).render({ title, ...rest });
-        new ActivityForm(this.signup).render(title);
+        this.activityDetailsInstance.render({ title, ...rest }, type);
+        this.activityFormInstance.render(title);
 
         this.toggleDialogState(state);
+    }
+
+    close () {
+        super.close();
+
+        if (this.resetForm) {
+            this.resetForm();
+
+            this.resetForm = null;
+        }
     }
 }
