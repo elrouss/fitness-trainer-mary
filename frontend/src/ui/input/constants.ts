@@ -4,7 +4,7 @@ export const validationSettings: TValidationSettings = {
     name: {
         errors: {
             minLength: 2,
-            maxLength: 200,
+            maxLength: 100,
             pattern: /^[А-Яа-яЁё\s-]{2,100}$/,
             required: true
         },

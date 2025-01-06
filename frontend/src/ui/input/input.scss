@@ -61,6 +61,10 @@
         cursor: default;
         transform: translateY(-50%);
 
+        &:disabled {
+            pointer-events: none;
+        }
+
         &_success {
             background-color: var(--color-status-success);
 

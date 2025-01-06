@@ -1,5 +1,26 @@
 mixin header(props = {})
     -
+        const navBarLinksDesktop = [
+            {
+                label: 'Обо мне',
+                href: '#about'
+            },
+            {
+                label: 'Тренировки',
+                href: '#workout'
+            },
+            {
+                label: 'Результаты',
+                href: '#results'
+            },
+            {
+                label: 'Мероприятия',
+                href: '#activities'
+            }
+        ]
+
+        const navBarLinksMobile = [...navBarLinksDesktop, { label: 'Форма обратной связи', href: '#feedback' }]
+
         const messengers = [
             {
                 icon: 'whatsapp',
@@ -22,7 +43,7 @@ mixin header(props = {})
                 +logo.header__logo
 
             .header__backdrop.header__backdrop_nav-bar
-                +nav-bar.p6
+                +nav-bar({ links: navBarLinksDesktop }).p6
 
             .header__backdrop.header__backdrop_buttons
                 each messenger in messengers
@@ -46,4 +67,4 @@ mixin header(props = {})
 
             +burger.header__burger
 
-        +nav-bar.header__nav-bar.visually-hidden.h3-m
+        +nav-bar({ links: navBarLinksMobile }).header__nav-bar.visually-hidden.h3-m

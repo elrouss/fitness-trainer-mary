@@ -12,6 +12,10 @@
     max-width: 1440px;
     transform: translateX(-50%);
 
+    &_height {
+        height: 100%;
+    }
+
     &__wrapper {
         @include media($xxxl) {
             margin: var(--spacing-700) clamp(1rem, 0.629rem + 1.524vw, 2rem);
@@ -137,6 +141,10 @@
             inset: 0;
             min-height: 100vh;
             background-color: rgba(var(--color-black-rgb), 0.5);
+        }
+
+        &_height {
+            height: 100%;
         }
     }
 }
