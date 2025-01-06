@@ -4,11 +4,15 @@
 .nav-bar {
     &__list {
         @include media($lg) {
+            @include hide-scrollbar;
+
             position: relative;
             flex-direction: column;
             row-gap: var(--spacing-550);
             align-items: center;
-            padding: 4.3125rem 0;
+            overflow-y: auto;
+            max-height: calc(100% - clamp(1rem, 0.629rem + 1.524vw, 2rem) - (var(--spacing-700) * 2) - (var(--spacing-750) * 2) - 42px);
+            padding: 1.75rem 0;
             border-radius: var(--radius-500);
             text-transform: uppercase;
             background: linear-gradient(

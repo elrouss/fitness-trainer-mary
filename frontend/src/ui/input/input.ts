@@ -96,12 +96,14 @@ export class Input {
             this.input.classList.remove('input__input_error');
             this.input.classList.add('input__input_success');
 
+            icon.setAttribute('disabled', 'true');
             icon.classList.remove('input__icon-status_error');
             icon.classList.add('input__icon-status_success');
         } else {
             this.input.classList.remove('input__input_success');
             this.input.classList.add('input__input_error');
 
+            icon.removeAttribute('disabled');
             icon.classList.remove('input__icon-status_success');
             icon.classList.add('input__icon-status_error');
         }
